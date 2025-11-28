@@ -18,7 +18,7 @@
 
 # -- Vrijdag 28 November
 - Meer taken uitgeschreven in Trello
-- Begonnen met werk aan gun script
+- Gun script 80% done
 - Player movement script gemaakt
 - Terrein gemaakt en gekleurd
 - Begin HUD concept art
