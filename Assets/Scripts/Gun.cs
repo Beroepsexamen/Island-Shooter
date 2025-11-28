@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Animator))]
-public class Gun
+public class Gun : MonoBehaviour
 {
     [SerializeField]
     private bool AddBulletSpread = true;
@@ -21,12 +21,12 @@ public class Gun
     [SerializeField]
     private LayerMask Mask;
 
-    private Animator animator;
+    private Animator Animator;
     private float LastShootTime;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
     }
 
     public void Shoot()
@@ -38,11 +38,11 @@ public class Gun
             Vector3 direction = GetDirection();
 
 
-            if (Physics.Raycast(BulletSpawnPoint.position, direction out RaycastHit hit, float.MaxValue, Mask))
+            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
             {
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
 
-                StartCoroutine()(SpawnTrail(trail, hit));
+                StartCoroutine(SpawnTrail(trail, hit));
 
                 LastShootTime = Time.time;
 
