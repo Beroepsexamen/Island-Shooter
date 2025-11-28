@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -66,5 +67,10 @@ public class Gun : MonoBehaviour
         }
         
         return direction;
+    }
+
+    IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+    {
+        return null;
     }
 }   
