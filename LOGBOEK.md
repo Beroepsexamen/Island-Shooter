@@ -4,7 +4,7 @@
 - Concept art gemaakt
 
 # -- Dinsdag 25 November
-- Stageconferentie, geen werk.
+- Stageconferentie, geen werk
 
 # -- Woensdag 26 November
 - Taken gemaakt in trello
@@ -12,3 +12,13 @@
 - Afspraken gemaakt
 - Game design document
 - Presentielijst
+
+# -- Donderdag 27 November
+- Studiedag, geen werk
+
+# -- Vrijdag 28 November
+- Meer taken uitgeschreven in Trello
+- Begonnen met werk aan gun script
+- Player movement script gemaakt
+- Terrein gemaakt en gekleurd
+- Begin HUD concept art
