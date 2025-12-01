@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    public Camera fpsCam;
     public Transform FirePoint;
     public GameObject Fire;
     public GameObject HitPoint;
@@ -20,9 +21,9 @@ public class Shooter : MonoBehaviour
     {
      RaycastHit hit;
 
-        if(Physics.Raycast(FirePoint.position, transform.TransformDirection(Vector3.forward), out hit, 100f))
+        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 100f))
         {
-            Debug.DrawRay(FirePoint.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.yellow);
 
 
             GameObject a = Instantiate(Fire, FirePoint.position, Quaternion.identity);
