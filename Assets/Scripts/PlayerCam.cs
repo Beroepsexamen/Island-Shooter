@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
+    public float SensX;
+    public float SensY;
 
-    public Transform orientation;
+    public Transform Orientation;
 
-    float xRotation;
-    float yRotation;
+    float XRotation;
+    float YRotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,15 +20,15 @@ public class PlayerCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensX * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensY * Time.deltaTime;
+        float MouseX = Input.GetAxis("Mouse X") * SensX * Time.deltaTime;
+        float MouseY = Input.GetAxis("Mouse Y") * SensY * Time.deltaTime;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
+        YRotation += MouseX;
+        XRotation -= MouseY;
+        
+        XRotation = Mathf.Clamp(XRotation, -90f, 90f); // Limit vertical look angle
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limit vertical look angle
-
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f); // Rotate camera based on mouse movement
-        orientation.rotation = Quaternion.Euler(0f, yRotation, 0f); // Rotate player orientation based on mouse movement
+        transform.rotation = Quaternion.Euler(XRotation, YRotation, 0f); // Rotate camera based on mouse movement
+        Orientation.rotation = Quaternion.Euler(0f, YRotation, 0f); // Rotate player orientation based on mouse movement
     }
 }
