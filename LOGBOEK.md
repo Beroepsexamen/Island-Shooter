@@ -22,3 +22,11 @@
 - Player movement script gemaakt
 - Terrein gemaakt en gekleurd
 - Begin HUD concept art
+
+# -- Maandag 1 December
+- Natuur toegevoegd aan eiland
+- Start screen gemaakt
+- Begonnen met HUD maken
+- Death screen gemaakt
+- Gun script afgemaakt
+- Player health gemaakt
