@@ -1341,11 +1341,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4df3ce82db8e66645afd54ab1d5b0262, type: 3}
   m_PrefabInstance: {fileID: 1281314512}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1348298011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7202770200674955729, guid: 24e8d107c74bd15408df9dec3da835b7, type: 3}
+  m_PrefabInstance: {fileID: 2141138105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1348298012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7897334402219241307, guid: 24e8d107c74bd15408df9dec3da835b7, type: 3}
   m_PrefabInstance: {fileID: 2141138105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348298015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348298011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94acbe374f6bfe4449636d9932f4877c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  FirePoint: {fileID: 583526801}
+  Fire: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+  HitPoint: {fileID: 2695941719300977822, guid: d0467414c35f2b349a4bb1219e454466, type: 3}
 --- !u!1001 &1464464844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2177,7 +2197,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7897334402219241307, guid: 24e8d107c74bd15408df9dec3da835b7, type: 3}
       insertIndex: 0
       addedObject: {fileID: 543450651880553715}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7202770200674955729, guid: 24e8d107c74bd15408df9dec3da835b7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348298015}
   m_SourcePrefab: {fileID: 100100000, guid: 24e8d107c74bd15408df9dec3da835b7, type: 3}
 --- !u!4 &543450651880553715
 Transform:
