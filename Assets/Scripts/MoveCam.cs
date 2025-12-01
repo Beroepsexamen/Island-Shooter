@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class MoveCam : MonoBehaviour
 {
-    public Transform cameraPosition;
+    public Transform CameraPosition;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = cameraPosition.position;
+        transform.position = CameraPosition.position;
     }
 }
