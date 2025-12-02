@@ -42,7 +42,7 @@ public class Shooter : MonoBehaviour
             GameObject hitFX = Instantiate(
                 shooterData.hitEffect,
                 hit.point,
-                Quaternion.identity
+                Quaternion.LookRotation(hit.normal)
             );
 
             Destroy(fire, shooterData.effectLifetime);
