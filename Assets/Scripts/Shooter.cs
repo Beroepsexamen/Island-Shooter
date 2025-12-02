@@ -3,9 +3,16 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public Camera fpsCam;
-    public Transform firePoint;
 
-    public ShooterData shooterData;
+    public ShooterData[] allGuns;
+    private ShooterData currentGunData;
+
+    private GameObject currentGun;
+
+    private void Start()
+    {
+        EquipGun(0);
+    }
 
     private void Update()
     {
@@ -13,19 +20,42 @@ public class Shooter : MonoBehaviour
         {
             Shooting();
         }
-    }        
 
-   
+        if (Input.GetKeyDown(KeyCode.Alpha1)) EquipGun(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) EquipGun(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) EquipGun(2);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) EquipGun(3);
+    }
+
+    void EquipGun(int index)
+    {
+        if (index < 0 || index >= allGuns.Length) return;
+
+        currentGunData = allGuns[index];
+
+        if (currentGun != null)
+            Destroy(currentGun);
+
+        currentGun = Instantiate(
+            currentGunData.Gun,
+            transform.position,
+            transform.rotation,
+            transform
+        );
+    }
 
     public void Shooting()
     {
+        if (currentGunData == null) return;
+        if (currentGunData.firePoint == null) return;
+
         RaycastHit hit;
 
         if (Physics.Raycast(
             fpsCam.transform.position,
             fpsCam.transform.forward,
             out hit,
-            shooterData.range))
+            currentGunData.range))
         {
             Debug.DrawRay(
                 fpsCam.transform.position,
@@ -34,19 +64,19 @@ public class Shooter : MonoBehaviour
             );
 
             GameObject fire = Instantiate(
-                shooterData.fireEffect,
-                firePoint.position,
-                Quaternion.identity
+                currentGunData.fireEffect,
+                currentGunData.firePoint.position,
+                currentGunData.firePoint.rotation
             );
 
             GameObject hitFX = Instantiate(
-                shooterData.hitEffect,
+                currentGunData.hitEffect,
                 hit.point,
                 Quaternion.LookRotation(hit.normal)
             );
 
-            Destroy(fire, shooterData.effectLifetime);
-            Destroy(hitFX, shooterData.effectLifetime);
+            Destroy(fire, currentGunData.effectLifetime);
+            Destroy(hitFX, currentGunData.effectLifetime);
         }
     }
 }
