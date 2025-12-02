@@ -13,9 +13,20 @@ public class PlayerHealth : MonoBehaviour
         Hearts.UpdateHP(Health);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(1);
+        }
+    }
+
     public void TakeDamage(int amount)
     {
-        Health
+        Health -= amount;
+        if (Health < 1) Health = 1;
+
+        Hearts.UpdateHP(Health);
 
     }
 }
