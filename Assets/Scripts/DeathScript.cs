@@ -6,7 +6,8 @@ public class PlayerDeathScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // If the parent object collides with the player, kill the player
+        if (collision.gameObject.CompareTag("Player")) 
         {
             PlayerHealth.Health = 0;
         }

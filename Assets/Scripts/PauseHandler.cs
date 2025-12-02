@@ -8,7 +8,6 @@ public class PauseHandler : MonoBehaviour
     public Canvas DeathCanvas;
     public bool isDead = false;
 
-    // Update is called once per frame
     void Update()
     {
         DeathUI();
@@ -16,12 +15,12 @@ public class PauseHandler : MonoBehaviour
 
     private void DeathUI()
     {
-        if (PlayerHealth.Health <= 0 && !isDead)
+        if (PlayerHealth.Health <= 0 && !isDead) // Check if player is dead
         {
             isDead = true;
         }
 
-        if (isDead)
+        if (isDead) // If player is dead show death screen
         {
             DeathCanvas.enabled = true;
             Time.timeScale = 0f;
@@ -29,7 +28,7 @@ public class PauseHandler : MonoBehaviour
             Cursor.visible = true;
         }
 
-        if (!isDead)
+        if (!isDead) // If player is alive hide death screen
         {
             DeathCanvas.enabled = false;
             Time.timeScale = 1f;
