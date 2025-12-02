@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
 
 
             GameObject a = Instantiate(Fire, FirePoint.position, Quaternion.identity);
-            GameObject b = Instantiate(HitPoint, hit.point, Quaternion.identity);
+            GameObject b = Instantiate(HitPoint, hit.point, Quaternion.LookRotation(hit.normal));
 
             Destroy(a, 1f);
             Destroy(b, 1f);
