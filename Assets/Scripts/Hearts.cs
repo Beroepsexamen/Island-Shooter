@@ -12,6 +12,7 @@ public class Hearts : MonoBehaviour
         hpImages.sprite = hpSprites[currentHP - 1];
 
 
+
     }
 
     // Update is called once per frame
