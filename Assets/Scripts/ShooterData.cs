@@ -4,6 +4,7 @@ using UnityEngine;
 public class ShooterData : ScriptableObject
 {
     public float range = 100f;
+    public GameObject Gun;
 
     public GameObject fireEffect;
     public GameObject hitEffect;
