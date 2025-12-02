@@ -10,14 +10,12 @@ public class PlayerCam : MonoBehaviour
     float XRotation;
     float YRotation;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         Cursor.visible = false; // Hide cursor
     }
 
-    // Update is called once per frame
     void Update()
     {
         float MouseX = Input.GetAxis("Mouse X") * SensX * Time.deltaTime;
