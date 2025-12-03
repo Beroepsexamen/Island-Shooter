@@ -36,3 +36,10 @@
 - Skybox toegevoegd en lighting verbeterd
 - Mist toegevoegd aan de map
 - Verder gewerkt aan UI
+
+# -- Woensdag 3 December
+- Verder gewerkt aan gun script
+- Map is vergroot en de kampen worden geschetst
+- Minimap gemaakt
+- Gewerkt aan player model en animatie
+- Gewerkt aan nieuwe player movement (nog niet af)
