@@ -1045,6 +1045,14 @@ PrefabInstance:
       propertyPath: gunHolderPrefab
       value: 
       objectReference: {fileID: 8073080760590410632, guid: 01cea585d9f22e543bd274953fb27f1c, type: 3}
+    - target: {fileID: 3777770229118948102, guid: 995a95747b09db24fbac01ff8bc4280f, type: 3}
+      propertyPath: 'allGuns.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d5d809b4553330b4ebc7522af727d793, type: 2}
+    - target: {fileID: 3777770229118948102, guid: 995a95747b09db24fbac01ff8bc4280f, type: 3}
+      propertyPath: 'allGuns.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 79d37347ae2cf9a4f8cf694735ef0d29, type: 2}
     - target: {fileID: 6838817530791655188, guid: 995a95747b09db24fbac01ff8bc4280f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 704.3127
