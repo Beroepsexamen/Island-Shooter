@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ARData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 100
-  Gun: {fileID: 5083571243391380039, guid: 14c7f0c01df8df54cba2a8e6da123bf3, type: 3}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
   effectLifetime: 1
+  Gun: {fileID: 5083571243391380039, guid: 14c7f0c01df8df54cba2a8e6da123bf3, type: 3}
+  firePoint: {fileID: 3442800691261025539, guid: 67552fb1f8b62414d9b3f820cc06bcba, type: 3}
