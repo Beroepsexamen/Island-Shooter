@@ -18,7 +18,7 @@
 
 # -- Vrijdag 28 November
 - Meer taken uitgeschreven in Trello
-- Gun script 80% done
+- Gun script 80% klaar
 - Player movement script gemaakt
 - Terrein gemaakt en gekleurd
 - Begin HUD concept art
@@ -32,13 +32,14 @@
 - Player health gemaakt
 
 # -- Dinsdag 2 December
-- Gun script verbeterd naar scriptable object
+- Gun script verbeterd naar scriptable objects
 - Skybox toegevoegd en lighting verbeterd
 - Mist toegevoegd aan de map
 - Verder gewerkt aan UI
 
 # -- Woensdag 3 December
-- Verder gewerkt aan gun script
+- Meer guns toegevoegd
+- Gun script verbeterd
 - Map is vergroot en de kampen worden geschetst
 - Minimap gemaakt
 - Gewerkt aan player model en animatie
