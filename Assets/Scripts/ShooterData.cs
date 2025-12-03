@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewShooterData", menuName = "Shooter/Shooter Data")]
 public class ShooterData : ScriptableObject
 {
     public float range = 100f;
@@ -11,5 +12,5 @@ public class ShooterData : ScriptableObject
 
     public GameObject Gun;
 
-    public Transform firePoint;   
+    public GameObject firePoint;   
 }

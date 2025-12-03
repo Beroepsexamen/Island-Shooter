@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79e5837e6d21834ebfd4c6d1837f690, type: 3}
+  m_Name: SniperData
+  m_EditorClassIdentifier: Assembly-CSharp::ShooterData
+  range: 200
+  fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
+  hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
+  effectLifetime: 1
+  Gun: {fileID: 1818409643289234389, guid: e1e5d20457a076a49899e0d99d8acbd7, type: 3}
+  firePoint: {fileID: 3745751158277718417, guid: 43e9a88866f4c63418a76b4727092d6f, type: 3}
