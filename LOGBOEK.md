@@ -30,3 +30,9 @@
 - Death screen gemaakt
 - Gun script afgemaakt
 - Player health gemaakt
+
+# -- Dinsdag 2 December
+- Gun script verbeterd naar scriptable object
+- Skybox toegevoegd en lighting verbeterd
+- Mist toegevoegd aan de map
+- Verder gewerkt aan UI
