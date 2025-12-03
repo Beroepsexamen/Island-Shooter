@@ -4,13 +4,28 @@ public class Shooter : MonoBehaviour
 {
     public Camera fpsCam;
 
-    public ShooterData[] allGuns;
-    private ShooterData currentGunData;
+    public GameObject gunHolderPrefab;
+    private Transform gunHolder;
 
+    public ShooterData[] allGuns;
+
+    public Vector3 spawnOffset = new Vector3(1f, 0f, 0f); // naast de speler
+
+    private ShooterData currentGunData;
     private GameObject currentGun;
 
     private void Start()
     {
+        // GunHolder spawn met offset t.o.v. de speler
+        GameObject holderInstance = Instantiate(
+            gunHolderPrefab,
+            transform.position + spawnOffset,
+            transform.rotation,
+            transform       // parent = player
+        );
+
+        gunHolder = holderInstance.transform;
+
         EquipGun(0);
     }
 
@@ -38,16 +53,15 @@ public class Shooter : MonoBehaviour
 
         currentGun = Instantiate(
             currentGunData.Gun,
-            transform.position,
-            transform.rotation,
-            transform
+            gunHolder.position,
+            gunHolder.rotation,
+            gunHolder
         );
     }
 
     public void Shooting()
     {
-        if (currentGunData == null) return;
-        if (currentGunData.firePoint == null) return;
+        if (currentGunData == null || currentGunData.firePoint == null) return;
 
         RaycastHit hit;
 
@@ -57,16 +71,10 @@ public class Shooter : MonoBehaviour
             out hit,
             currentGunData.range))
         {
-            Debug.DrawRay(
-                fpsCam.transform.position,
-                fpsCam.transform.forward * hit.distance,
-                Color.yellow
-            );
-
             GameObject fire = Instantiate(
                 currentGunData.fireEffect,
-                currentGunData.firePoint.position,
-                currentGunData.firePoint.rotation
+                currentGunData.firePoint.transform.position,
+                currentGunData.firePoint.transform.rotation
             );
 
             GameObject hitFX = Instantiate(

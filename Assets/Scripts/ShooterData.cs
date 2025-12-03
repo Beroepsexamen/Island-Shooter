@@ -11,5 +11,5 @@ public class ShooterData : ScriptableObject
 
     public GameObject Gun;
 
-    public Transform firePoint;   
+    public GameObject firePoint;   
 }
