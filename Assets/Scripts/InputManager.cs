@@ -28,6 +28,12 @@ namespace IslandShooter.Manager
             LookAction.canceled += OnLook;
         }
 
+        private void HideCursor()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         private void OnMove(InputAction.CallbackContext context)
         {
             Move = context.ReadValue<Vector2>();
