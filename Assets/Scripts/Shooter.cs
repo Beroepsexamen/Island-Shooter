@@ -62,10 +62,10 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
-        if (weaponUI != null)
-        {
-           weaponUI.UpdateIcon(currentGunData.weaponIcon);
-        }
+        //if (weaponUI != null)
+        //{
+        //   weaponUI.UpdateIcon(currentGunData.weaponIcon);
+        //}
     }
 
     public void Shooting()
