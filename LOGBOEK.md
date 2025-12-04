@@ -43,4 +43,9 @@
 - Map is vergroot en de kampen worden geschetst
 - Minimap gemaakt
 - Gewerkt aan player model en animatie
-- Gewerkt aan nieuwe player movement (nog niet af)
+- Nieuwe player movement script gemaakt
+
+# -- Donderdag 4 December
+- Shitty movement script niet gefixed
+- Verder aan HUD gewerkt
+- Kampen gedeeltelijk geplaatst
