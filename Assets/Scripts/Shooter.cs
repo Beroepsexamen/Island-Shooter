@@ -8,10 +8,14 @@ public class Shooter : MonoBehaviour
 
     public ShooterData[] allGuns;
 
-    public Vector3 spawnOffset = new Vector3(1f, 0f, 0f); // naast de speler
+    public Vector3 spawnOffset = new Vector3(0f, 0f, 0f); // naast de speler
 
     private ShooterData currentGunData;
     private GameObject currentGun;
+
+    
+    private float nextFireTime = 0f;
+    
 
     private void Start()
     {
@@ -30,7 +34,7 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             Shooting();
         }
@@ -56,11 +60,22 @@ public class Shooter : MonoBehaviour
             gunHolder.rotation,
             gunHolder
         );
+
+        //if (weaponUI != null)
+        //{
+        //    weaponUI.UpdateIcon(currentGunData.weaponIcon);
+        //}
     }
 
     public void Shooting()
     {
         if (currentGunData == null || currentGunData.firePoint == null) return;
+
+        // cooldown check
+        if (Time.time < nextFireTime) return;
+
+        // set next allowed fire time using ShootDelay from the current gun data
+        nextFireTime = Time.time + currentGunData.ShootDelay;
 
         RaycastHit hit;
 

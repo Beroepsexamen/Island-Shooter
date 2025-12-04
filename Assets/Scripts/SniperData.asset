@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: SniperData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 200
+  Damage: 10
+  ShootDelay: 10
+  maxAmmo: 3
+  WeaponIcon: {fileID: 0}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
   effectLifetime: 1

@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: SMGData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 20
+  Damage: 0.1
+  ShootDelay: 0.5
+  maxAmmo: 30
+  WeaponIcon: {fileID: 0}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
-  effectLifetime: 1
+  effectLifetime: 1.02
   Gun: {fileID: 4597506241199749824, guid: 052ec763088800949925015c13206ffc, type: 3}
   firePoint: {fileID: 4656745964830813955, guid: 960ca947be1d47d4dbe8777ea1d5f276, type: 3}
