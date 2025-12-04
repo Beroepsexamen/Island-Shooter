@@ -4,8 +4,7 @@ public class Shooter : MonoBehaviour
 {
     public Camera fpsCam;
 
-    public GameObject gunHolderPrefab;
-    private Transform gunHolder;
+    public Transform gunHolder;
 
     public ShooterData[] allGuns;
 
@@ -16,15 +15,15 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
-        // GunHolder spawn met offset t.o.v. de speler
-        GameObject holderInstance = Instantiate(
-            gunHolderPrefab,
-            transform.position + spawnOffset,
-            transform.rotation,
-            transform       // parent = player
-        );
+        
+        //GameObject holderInstance = Instantiate(
+        //    gunHolderPrefab,
+        //    transform.position + spawnOffset,
+        //    transform.rotation,
+        //    transform       
+        //);
 
-        gunHolder = holderInstance.transform;
+        //gunHolder = holderInstance.transform;
 
         EquipGun(0);
     }
