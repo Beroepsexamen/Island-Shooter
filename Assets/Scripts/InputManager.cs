@@ -17,6 +17,8 @@ namespace IslandShooter.Manager
 
         private void Awake()
         {
+            HideCursor();
+            
             CurrentMap = PlayerInput.currentActionMap;
             MoveAction = CurrentMap.FindAction("Move");
             LookAction = CurrentMap.FindAction("Look");
