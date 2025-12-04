@@ -43,6 +43,7 @@ public class Shooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) EquipGun(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) EquipGun(2);
         if (Input.GetKeyDown(KeyCode.Alpha4)) EquipGun(3);
+        if (Input.GetKeyDown(KeyCode.Alpha9)) EquipGun(4);
     }
 
     void EquipGun(int index)

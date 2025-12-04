@@ -3677,6 +3677,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1becd419d4bc8694f8110ba048e9b44d, type: 2}
   - {fileID: 11400000, guid: d5d809b4553330b4ebc7522af727d793, type: 2}
   - {fileID: 11400000, guid: 79d37347ae2cf9a4f8cf694735ef0d29, type: 2}
+  - {fileID: 11400000, guid: 2efb182ce9270d14ab0cfc48e3062974, type: 2}
   spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &8331105212034493705
 Transform:
