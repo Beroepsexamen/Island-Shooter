@@ -16,12 +16,12 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
-        // GunHolder spawn met offset t.o.v. de speler
+        
         GameObject holderInstance = Instantiate(
             gunHolderPrefab,
             transform.position + spawnOffset,
             transform.rotation,
-            transform       // parent = player
+            transform       
         );
 
         gunHolder = holderInstance.transform;
