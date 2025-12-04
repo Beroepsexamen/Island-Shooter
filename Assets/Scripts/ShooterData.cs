@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 [CreateAssetMenu(fileName = "NewShooterData", menuName = "Shooter/Shooter Data")]
 public class ShooterData : ScriptableObject
 {
