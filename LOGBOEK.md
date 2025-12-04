@@ -49,3 +49,4 @@
 - Shitty movement script niet gefixed
 - Verder aan HUD gewerkt
 - Kampen gedeeltelijk geplaatst
+- Eerste gesprek met klant
