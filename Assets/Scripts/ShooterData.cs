@@ -7,6 +7,7 @@ public class ShooterData : ScriptableObject
     public float Damage = 10f;
     public float ShootDelay = 0.5f;
     public int maxAmmo = 30;
+    public Sprite WeaponIcon;
 
     public GameObject fireEffect;
     public GameObject hitEffect;

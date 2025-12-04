@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e79e5837e6d21834ebfd4c6d1837f690, type: 3}
-  m_Name: SniperData
+  m_Name: MEMEData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
-  range: 200
-  Damage: 10
-  ShootDelay: 10
-  maxAmmo: 3
+  range: 100
+  Damage: 99999
+  ShootDelay: 0.00001
+  maxAmmo: 999
   WeaponIcon: {fileID: 0}
-  fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
-  hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
+  fireEffect: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
+  hitEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   effectLifetime: 1
-  Gun: {fileID: 1818409643289234389, guid: e1e5d20457a076a49899e0d99d8acbd7, type: 3}
-  firePoint: {fileID: 3745751158277718417, guid: 43e9a88866f4c63418a76b4727092d6f, type: 3}
+  Gun: {fileID: 919132149155446097, guid: a4dd9a9590bbbb743a32c14e18236dab, type: 3}
+  firePoint: {fileID: 8235595629992800021, guid: f992f2e5dad8cf44ca768f6ea33fae3a, type: 3}
