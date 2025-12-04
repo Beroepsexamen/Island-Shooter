@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Shooter : MonoBehaviour
 {
     public Camera fpsCam;
@@ -61,10 +61,10 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
-        //if (weaponUI != null)
-        //{
-        //    weaponUI.UpdateIcon(currentGunData.weaponIcon);
-        //}
+        if (weaponUI != null)
+        {
+           weaponUI.UpdateIcon(currentGunData.weaponIcon);
+        }
     }
 
     public void Shooting()
