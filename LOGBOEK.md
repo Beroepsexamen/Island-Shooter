@@ -50,3 +50,9 @@
 - Verder aan HUD gewerkt
 - Kampen gedeeltelijk geplaatst
 - Eerste gesprek met klant
+
+# -- Vrijdag 5 December
+- Begonnen met pickup script
+- Gijzelnemer model geimporteerd
+- Gijzelnemer script gemaakt
+- UML begonnen
