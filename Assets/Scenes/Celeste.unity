@@ -954,6 +954,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786386138}
   m_CullTransparentMesh: 1
+--- !u!1 &934816328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934816329}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934816329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934816328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000021764972, y: 1.053877e-10, z: -1.7826082e-10, w: 1}
+  m_LocalPosition: {x: -0, y: 0.097260386, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1755665297447332057}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974586002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,37 +1075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
   Player: {fileID: 1599049244479862355}
---- !u!1 &1117867835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1117867836}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1117867836
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117867835}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1465452472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2610,7 @@ GameObject:
   - component: {fileID: 8381343941667487668}
   - component: {fileID: 8381343941667487669}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2822,14 +2822,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599049244479862355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 934816329}
   - {fileID: 2482641573778953705}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1790604817858329123
 Transform:
   m_ObjectHideFlags: 0
@@ -3162,7 +3163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2972320740080504659}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -4713,7 +4714,7 @@ Transform:
   m_GameObject: {fileID: 3461973353016044509}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000027210717, y: 1, z: 3.326032e-29, w: 0.00000034615957}
-  m_LocalPosition: {x: 0, y: 0.07, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0.18}
   m_LocalScale: {x: 0.6666667, y: 0.6666668, z: 0.6666668}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6303,7 +6304,7 @@ MonoBehaviour:
   MoveSpeed: 8
   WalkSpeed: 0
   SprintSpeed: 0
-  PlayerHeight: 1.5
+  GroundCheck: {fileID: 934816329}
   Ground:
     serializedVersion: 2
     m_Bits: 8
@@ -6784,4 +6785,3 @@ SceneRoots:
   - {fileID: 543450651745526253}
   - {fileID: 1755665297447332057}
   - {fileID: 1465452474}
-  - {fileID: 1117867836}

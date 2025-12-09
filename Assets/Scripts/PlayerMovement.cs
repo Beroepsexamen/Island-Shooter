@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public float SprintSpeed;
 
     [Header("Ground Check")]
-    public float PlayerHeight;
+    public Transform GroundCheck;
     public LayerMask Ground;
     public float GroundDrag;
     private bool Grounded;
@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private bool ReadyToJump = true;
 
     Vector3 MoveDirection;
+
+    Transform Orientation;
     Animator Animator;
 
     private int XVelHash;
@@ -37,9 +39,11 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody RigidBody;
 
+
     private void Start()
     {
         Animator = PlayerObj.GetComponent<Animator>();
+        Orientation = transform.Find("Orientation");
 
         XVelHash = Animator.StringToHash("XVelocity");
         YVelHash = Animator.StringToHash("YVelocity");
@@ -51,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Check if on ground
-        Grounded = Physics.Raycast(transform.position, Vector3.down, PlayerHeight + 0.1f, Ground);
+        Grounded = Physics.Raycast(GroundCheck.position, Vector3.down, 0.1f, Ground);
 
         if (Grounded)
             RigidBody.linearDamping = GroundDrag;
@@ -137,9 +141,10 @@ public class PlayerMovement : MonoBehaviour
     private void AnimationControl()
     {
         Vector3 FlatVel = new Vector3(RigidBody.linearVelocity.x, 0f, RigidBody.linearVelocity.z);
+        Vector3 LocalVel = PlayerObj.InverseTransformDirection(FlatVel);
 
-        Animator.SetFloat(XVelHash, FlatVel.x);
-        Animator.SetFloat(YVelHash, FlatVel.z);
+        Animator.SetFloat(XVelHash, LocalVel.x);
+        Animator.SetFloat(YVelHash, LocalVel.z);
     }
 
     private void Jump()
@@ -156,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
     private bool OnSlope()
     {
         // Check if player is on a slope
-        if (Physics.Raycast(transform.position, Vector3.down, out SlopeHit, PlayerHeight * 0.5f + 0.2f))
+        if (Physics.Raycast(GroundCheck.position, Vector3.down, out SlopeHit, 0.2f))
         {
             float Angle = Vector3.Angle(Vector3.up, SlopeHit.normal);
             return Angle < MaxSlopeAngle && Angle != 0;
