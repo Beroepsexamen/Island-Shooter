@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,26 +6,50 @@ public class EnemyController : MonoBehaviour
 {
     public float LookRadius = 10f;
     
-    Transform target;
-    NavMeshAgent agent;
+    Transform Target;
+    NavMeshAgent Agent;
+    Animator Animator;
+
+    private int YVelHash;
+
+    private bool IsWalking = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = PlayerManager.instance.Player.transform;
-        agent = GetComponent<NavMeshAgent>();
+        Target = PlayerManager.instance.Player.transform;
+        Agent = GetComponent<NavMeshAgent>();
+        Animator = GetComponent<Animator>();
+
+        YVelHash = Animator.StringToHash("YVelocity");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float Distance = Vector3.Distance(Target.position, transform.position);
 
-        if (distance <= LookRadius)
+        if (Distance <= LookRadius) 
         {
-            bool success = agent.SetDestination(target.position);
-            Debug.Log(success ? "Destination set successfully." : "Failed to set destination.");
+            Agent.SetDestination(Target.position);
+            IsWalking = true;
         }
+
+        if (Distance <= Agent.stoppingDistance)
+        {
+            FaceTarget();
+            IsWalking = false;
+        }
+
+        if (IsWalking) Animator.SetFloat(YVelHash, 1f);
+        else Animator.SetFloat(YVelHash, 0f);
+    }
+
+    private void FaceTarget()
+    {
+        Vector3 Direction = (Target.position - transform.position).normalized;
+        Quaternion LookRotation = Quaternion.LookRotation(new Vector3(Direction.x, 0, Direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, LookRotation, Time.deltaTime * 5f);
     }
 
     void OnDrawGizmosSelected()
