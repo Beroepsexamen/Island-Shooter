@@ -10,9 +10,8 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent Agent;
     Animator Animator;
 
+    private int XVelHash;
     private int YVelHash;
-
-    private bool IsWalking = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +20,7 @@ public class EnemyController : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Animator = GetComponent<Animator>();
 
+        XVelHash = Animator.StringToHash("XVelocity");
         YVelHash = Animator.StringToHash("YVelocity");
     }
 
@@ -29,20 +29,15 @@ public class EnemyController : MonoBehaviour
     {
         float Distance = Vector3.Distance(Target.position, transform.position);
 
-        if (Distance <= LookRadius) 
-        {
-            Agent.SetDestination(Target.position);
-            IsWalking = true;
-        }
+        if (Distance <= LookRadius) Agent.SetDestination(Target.position);
 
-        if (Distance <= Agent.stoppingDistance)
-        {
-            FaceTarget();
-            IsWalking = false;
-        }
+        if (Distance <= Agent.stoppingDistance) FaceTarget();
 
-        if (IsWalking) Animator.SetFloat(YVelHash, 1f);
-        else Animator.SetFloat(YVelHash, 0f);
+        Vector3 FlatVel = new Vector3(Agent.velocity.x, 0, Agent.velocity.z);
+        Vector3 LocalVel = transform.InverseTransformDirection(FlatVel);
+
+        Animator.SetFloat(XVelHash, LocalVel.x);
+        Animator.SetFloat(YVelHash, LocalVel.z);
     }
 
     private void FaceTarget()
