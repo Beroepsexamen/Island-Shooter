@@ -3,10 +3,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float MoveSpeed;
+    public float WalkSpeed;
+    public float SprintSpeed;
 
-    [HideInInspector] public float WalkSpeed;
-    [HideInInspector] public float SprintSpeed;
+    private float MoveSpeed;
 
     [Header("Ground Check")]
     public Transform GroundCheck;
@@ -57,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
         // Check if on ground
         Grounded = Physics.Raycast(GroundCheck.position, Vector3.down, 0.1f, Ground);
 
+        // Set move speed
+        MoveSpeed = Input.GetKey(KeyCode.LeftShift) ? SprintSpeed : WalkSpeed;
+
         if (Grounded)
             RigidBody.linearDamping = GroundDrag;
         else
@@ -90,8 +93,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        Debug.Log(Grounded);
-
         // Calculate movement direction
         MoveDirection = PlayerObj.forward * VerticalInput + PlayerObj.right * HorizontalInput;
 
