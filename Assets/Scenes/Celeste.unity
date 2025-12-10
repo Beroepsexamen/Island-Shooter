@@ -215,7 +215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 126
+  m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!154 &276108979
 TerrainCollider:
@@ -247,11 +247,11 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: a541481e05c94234fbbce80f9df4ed06, type: 2}
-  m_TreeDistance: 250
-  m_TreeBillboardDistance: 50
+  m_TreeDistance: 1400
+  m_TreeBillboardDistance: 434
   m_TreeCrossFadeLength: 200
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeMaximumFullLODCount: 2831
+  m_DetailObjectDistance: 583
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -270,7 +270,7 @@ Terrain:
   m_DeringLightProbesForTrees: 1
   m_ReceiveGI: 1
   m_ScaleInLightmap: 0.0256
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightmapParameters: {fileID: 15200, guid: 0000000000000000f000000000000000, type: 0}
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
@@ -1354,13 +1354,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 2.1694e-41, y: 2.524355e-29, z: 0, w: -1.5851105e-18}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -1378,7 +1378,7 @@ Transform:
   m_GameObject: {fileID: 1513573247}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16715078, y: -0.8930074, z: 0.19892684, w: 0.36745968}
-  m_LocalPosition: {x: 4.01, y: 2, z: 6.95}
+  m_LocalPosition: {x: 78.7, y: 2, z: 81.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2628,8 +2628,7 @@ Transform:
   m_LocalPosition: {x: 0.030057, y: 0.07261795, z: 0.079555996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5625060550645122383}
+  m_Children: []
   m_Father: {fileID: 1696980001767968572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1664518098849128937
@@ -2681,6 +2680,7 @@ Transform:
   - {fileID: 7836491325021574255}
   - {fileID: 1790604817858329123}
   - {fileID: 1633186183420072130}
+  - {fileID: 5625060550645122383}
   m_Father: {fileID: 1202032174554394447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1709366161591915353
@@ -4713,12 +4713,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3461973353016044509}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000006775939, y: 1, z: 0.00000005960463, w: 0.00000019653744}
-  m_LocalPosition: {x: -0.03, y: -0.012, z: 0.07}
-  m_LocalScale: {x: 0.6666666, y: 0.666667, z: 0.66666704}
+  m_LocalRotation: {x: 0.00000006775939, y: 1, z: 0.00000005960463, w: 0.00000019653721}
+  m_LocalPosition: {x: 0.000057000667, y: 0.072217956, z: 0.129556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1633186183420072130}
+  m_Father: {fileID: 1696980001767968572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5626143388823042031
 GameObject:
