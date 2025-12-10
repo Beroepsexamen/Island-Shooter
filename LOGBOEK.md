@@ -56,3 +56,15 @@
 - Gijzelnemer model geimporteerd
 - Gijzelnemer script gemaakt
 - UML begonnen
+
+# -- Dinsdag 9 December
+- Gewerkt aan UML
+- Begonnen met game desing document
+- Nieuwe nieuwe player movement gemaakt en werkt
+- Enemy gemaakt en enemy animaties toegevoegd
+
+# -- Woensdag 10 December
+- Performance upgrades gemaakt
+- Game design document zo goed als af
+- Run functie en animaties toegevoegd
+- Player animaties geïmporteerd (death, wisselen van wapens)
