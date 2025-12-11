@@ -1,3 +1,4 @@
+using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class PauseHandler : MonoBehaviour
     [Header("Death Screen")]
     public PlayerHealth PlayerHealth;
     public Canvas DeathCanvas;
+    public Animator PlayerAnimator;
+    public PlayerCam PlayerCam;
     public bool isDead = false;
 
     void Update()
@@ -17,21 +20,22 @@ public class PauseHandler : MonoBehaviour
     {
         if (PlayerHealth.Health <= 0 && !isDead) // Check if player is dead
         {
-            isDead = true;
+            StartCoroutine(Die());
         }
 
         if (isDead) // If player is dead show death screen
         {
             DeathCanvas.enabled = true;
-            Time.timeScale = 0f;
+            PlayerCam.enabled = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+    }
 
-        if (!isDead) // If player is alive hide death screen
-        {
-            DeathCanvas.enabled = false;
-            Time.timeScale = 1f;
-        }
+    private IEnumerator Die()
+    {
+        PlayerAnimator.SetBool("IsDead", true);
+        yield return new WaitForSeconds(2f);
+        isDead = true;
     }
 }

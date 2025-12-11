@@ -24,9 +24,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         Health -= amount;
-        if (Health < 1) Health = 1;
 
         Hearts.UpdateHP(Health);
-
     }
 }
