@@ -1,35 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 public class Shooter : MonoBehaviour
 {
     public Camera fpsCam;
 
     public Transform gunHolder;
 
-    public ShooterData[] allGuns;
-
-    public Vector3 spawnOffset = new Vector3(0f, 0f, 0f); // naast de speler
+    // Guns the player has picked up
+    public List<ShooterData> unlockedGuns = new List<ShooterData>();
 
     private ShooterData currentGunData;
     private GameObject currentGun;
 
-    
     private float nextFireTime = 0f;
-    
 
     private void Start()
     {
-        
-        //GameObject holderInstance = Instantiate(
-        //    gunHolderPrefab,
-        //    transform.position + spawnOffset,
-        //    transform.rotation,
-        //    transform       
-        //);
-
-        //gunHolder = holderInstance.transform;
-
-        EquipGun(0);
+        // Start with the first gun if any exist
+        if (unlockedGuns.Count > 0)
+            EquipGun(0);
     }
 
     private void Update()
@@ -46,11 +37,21 @@ public class Shooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha9)) EquipGun(4);
     }
 
+    // Called when a pickup is collected
+    public void AddGun(ShooterData newGun)
+    {
+        if (!unlockedGuns.Contains(newGun))
+        {
+            unlockedGuns.Add(newGun);
+            EquipGun(unlockedGuns.Count - 1); // auto-equip new gun
+        }
+    }
+
     void EquipGun(int index)
     {
-        if (index < 0 || index >= allGuns.Length) return;
+        if (index < 0 || index >= unlockedGuns.Count) return;
 
-        currentGunData = allGuns[index];
+        currentGunData = unlockedGuns[index];
 
         if (currentGun != null)
             Destroy(currentGun);
@@ -61,7 +62,6 @@ public class Shooter : MonoBehaviour
             gunHolder.rotation,
             gunHolder
         );
-
         //if (weaponUI != null)
         //{
         //   weaponUI.UpdateIcon(currentGunData.weaponIcon);
@@ -72,10 +72,9 @@ public class Shooter : MonoBehaviour
     {
         if (currentGunData == null || currentGunData.firePoint == null) return;
 
-        // cooldown check
+        // cooldown
         if (Time.time < nextFireTime) return;
 
-        // set next allowed fire time using ShootDelay from the current gun data
         nextFireTime = Time.time + currentGunData.ShootDelay;
 
         RaycastHit hit;
