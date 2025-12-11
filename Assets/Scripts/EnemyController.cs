@@ -31,7 +31,15 @@ public class EnemyController : MonoBehaviour
 
         if (Distance <= LookRadius) Agent.SetDestination(Target.position);
 
-        if (Distance <= Agent.stoppingDistance) FaceTarget();
+        if (Distance <= Agent.stoppingDistance)
+        {
+            Animator.SetBool("IsCrouched", true);
+            FaceTarget();
+        }
+        else
+        {
+            Animator.SetBool("IsCrouched", false);
+        }
 
         Vector3 FlatVel = new Vector3(Agent.velocity.x, 0, Agent.velocity.z);
         Vector3 LocalVel = transform.InverseTransformDirection(FlatVel);
