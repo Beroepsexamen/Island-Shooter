@@ -65,6 +65,17 @@
 
 # -- Woensdag 10 December
 - Performance upgrades gemaakt
-- Game design document zo goed als af
+- Gewerkt aan game design document
 - Run functie en animaties toegevoegd
 - Player animaties geïmporteerd (death, wisselen van wapens)
+
+# -- Donderdag 11 December
+- Gewerkt aan game design document
+- Gun pickup script gemaakt
+- Nieuwe player prefab gemaakt
+- Death animatie toegevoegd
+- Crouch logika en animatie toegevoegd
+
+# -- Vrijdag 12 December
+- Gewerkt aan game design document
+- Movement speed van player en enemy aangepast
