@@ -3,12 +3,12 @@ using UnityEngine.UI;
 public class WeaponsUIscript : MonoBehaviour
 {
      
-    //public ImageConversion iconImage;
+    public Image iconImage;
 
-    //public void UpdateIcon(Sprite newIcon)
-    //{
-    //    iconImage.Sprite = newIcon;
-    //}
+    public void UpdateIcon(Sprite newIcon)
+    {
+        iconImage.sprite = newIcon;
+    }
 
     
 }

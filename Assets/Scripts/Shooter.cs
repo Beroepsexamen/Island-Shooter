@@ -8,6 +8,8 @@ public class Shooter : MonoBehaviour
 
     public Transform gunHolder;
 
+    public WeaponsUIscript weaponUI;
+
     // Guns the player has picked up
     public List<ShooterData> unlockedGuns = new List<ShooterData>();
 
@@ -62,10 +64,10 @@ public class Shooter : MonoBehaviour
             gunHolder.rotation,
             gunHolder
         );
-        //if (weaponUI != null)
-        //{
-        //   weaponUI.UpdateIcon(currentGunData.weaponIcon);
-        //}
+        if (weaponUI != null)
+        {
+           weaponUI.UpdateIcon(currentGunData.weaponIcon);
+        }
     }
 
     public void Shooting()
