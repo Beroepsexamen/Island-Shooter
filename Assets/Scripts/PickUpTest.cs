@@ -1,18 +1,27 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunPickup : MonoBehaviour
 {
     public ShooterData gunData;
+    public GameObject pressEUI;
 
     private Shooter playerShooter;
-    private bool playerInRange = false;
+    private bool playerInRange;
+
+    void Start()
+    {
+        if (pressEUI != null)
+            pressEUI.SetActive(false);
+    }
 
     void Update()
     {
-        // Alleen oppakken als speler dichtbij is en E drukt
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             playerShooter.AddGun(gunData);
+            if (pressEUI != null)
+                pressEUI.SetActive(false);
             Destroy(gameObject);
         }
     }
@@ -20,24 +29,24 @@ public class GunPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Shooter shooter = other.GetComponent<Shooter>();
-
         if (shooter != null)
         {
             playerShooter = shooter;
             playerInRange = true;
+            if (pressEUI != null)
+                pressEUI.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         Shooter shooter = other.GetComponent<Shooter>();
-
         if (shooter != null)
         {
             playerShooter = null;
             playerInRange = false;
+            if (pressEUI != null)
+                pressEUI.SetActive(false);
         }
     }
 }
-//Make sure that the GunPickup object has a Collider set as Trigger for this to work properly.
-//Make sure the player GameObject has a Shooter component attached.

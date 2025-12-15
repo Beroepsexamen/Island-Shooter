@@ -5,12 +5,9 @@ using System.Collections.Generic;
 public class Shooter : MonoBehaviour
 {
     public Camera fpsCam;
-
     public Transform gunHolder;
-
     public WeaponsUIscript weaponUI;
 
-    // Guns the player has picked up
     public List<ShooterData> unlockedGuns = new List<ShooterData>();
 
     private ShooterData currentGunData;
@@ -18,9 +15,13 @@ public class Shooter : MonoBehaviour
 
     private float nextFireTime = 0f;
 
+    private int currentAmmo;
+
+    // Ammo per gun opslaan
+    private Dictionary<ShooterData, int> ammoPerGun = new Dictionary<ShooterData, int>();
+
     private void Start()
     {
-        // Start with the first gun if any exist
         if (unlockedGuns.Count > 0)
             EquipGun(0);
     }
@@ -28,9 +29,7 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0))
-        {
             Shooting();
-        }
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) EquipGun(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) EquipGun(1);
@@ -39,19 +38,29 @@ public class Shooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha9)) EquipGun(4);
     }
 
-    // Called when a pickup is collected
     public void AddGun(ShooterData newGun)
     {
         if (!unlockedGuns.Contains(newGun))
         {
             unlockedGuns.Add(newGun);
-            EquipGun(unlockedGuns.Count - 1); // auto-equip new gun
+
+            // start ammo voor nieuw wapen
+            ammoPerGun[newGun] = newGun.maxAmmo;
+
+            EquipGun(unlockedGuns.Count - 1);
         }
     }
 
     void EquipGun(int index)
     {
-        if (index < 0 || index >= unlockedGuns.Count) return;
+        if (index < 0 || index >= unlockedGuns.Count)
+            return;
+
+        // sla ammo van huidig wapen op
+        if (currentGunData != null)
+        {
+            ammoPerGun[currentGunData] = currentAmmo;
+        }
 
         currentGunData = unlockedGuns[index];
 
@@ -64,20 +73,30 @@ public class Shooter : MonoBehaviour
             gunHolder.rotation,
             gunHolder
         );
+
+        // laad ammo van dit wapen
+        if (!ammoPerGun.ContainsKey(currentGunData))
+            ammoPerGun[currentGunData] = currentGunData.maxAmmo;
+
+        currentAmmo = ammoPerGun[currentGunData];
+
         if (weaponUI != null)
-        {
-           weaponUI.UpdateIcon(currentGunData.weaponIcon);
-        }
+            weaponUI.UpdateIcon(currentGunData.weaponIcon);
     }
 
     public void Shooting()
     {
-        if (currentGunData == null || currentGunData.firePoint == null) return;
+        if (currentGunData == null || currentGunData.firePoint == null)
+            return;
 
-        // cooldown
-        if (Time.time < nextFireTime) return;
+        if (currentAmmo <= 0)
+            return;
+
+        if (Time.time < nextFireTime)
+            return;
 
         nextFireTime = Time.time + currentGunData.ShootDelay;
+        currentAmmo--;
 
         RaycastHit hit;
 
