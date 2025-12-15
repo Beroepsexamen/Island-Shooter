@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: MEMEData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 100
-  Damage: 99999
+  damage: 10
   ShootDelay: 0.00001
   maxAmmo: 999
-  WeaponIcon: {fileID: 0}
+  reloadTime: 2
+  weaponIcon: {fileID: 21300000, guid: ebb61bc28c8a201449fe53f8d2c52a85, type: 3}
   fireEffect: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   hitEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   effectLifetime: 1
