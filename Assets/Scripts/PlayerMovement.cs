@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     public LayerMask Ground;
     public float GroundDrag;
-    private bool Grounded;
+    private bool IsGrounded;
 
     [Header("Slope Handling")]
     public float MaxSlopeAngle;
@@ -55,12 +55,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Check if on ground
-        Grounded = Physics.Raycast(GroundCheck.position, Vector3.down, 0.1f, Ground);
+        IsGrounded = Physics.Raycast(GroundCheck.position, Vector3.down, 0.1f, Ground);
 
         // Set move speed
         MoveSpeed = Input.GetKey(KeyCode.LeftShift) ? SprintSpeed : WalkSpeed;
 
-        if (Grounded)
+        if (IsGrounded)
             RigidBody.linearDamping = GroundDrag;
         else
             RigidBody.linearDamping = 0;
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         VerticalInput = Input.GetAxisRaw("Vertical");
 
         // When to jump
-        if (Input.GetKey(KeyCode.Space) && ReadyToJump && Grounded)
+        if (Input.GetKey(KeyCode.Space) && ReadyToJump && IsGrounded)
         {
             ReadyToJump = false;
 
@@ -106,11 +106,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // On ground
-        if (Grounded)
+        if (IsGrounded)
             RigidBody.AddForce(MoveDirection.normalized * MoveSpeed * 10f, ForceMode.Force);
 
         // In air
-        else if (!Grounded)
+        else if (!IsGrounded)
             RigidBody.AddForce(MoveDirection.normalized * MoveSpeed * 10f * AirMultiplier, ForceMode.Force);
 
         // Turn off gravity while on slope
