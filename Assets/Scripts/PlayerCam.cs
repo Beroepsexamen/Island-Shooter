@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    public float SensX;
-    public float SensY;
+    public float SensX = 150f;
+    public float SensY = 150f;
 
     public Transform PlayerObj;
 

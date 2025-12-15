@@ -9,7 +9,7 @@ public class PauseHandler : MonoBehaviour
     public Canvas DeathCanvas;
     public Animator PlayerAnimator;
     public PlayerCam PlayerCam;
-    public bool isDead = false;
+    public bool IsDead = false;
 
     void Update()
     {
@@ -18,12 +18,12 @@ public class PauseHandler : MonoBehaviour
 
     private void DeathUI()
     {
-        if (PlayerHealth.Health <= 0 && !isDead) // Check if player is dead
+        if (PlayerHealth.Health <= 0 && !IsDead) // Check if player is dead
         {
             StartCoroutine(Die());
         }
 
-        if (isDead) // If player is dead show death screen
+        if (IsDead) // If player is dead show death screen
         {
             DeathCanvas.enabled = true;
             PlayerCam.enabled = false;
@@ -36,6 +36,6 @@ public class PauseHandler : MonoBehaviour
     {
         PlayerAnimator.SetBool("IsDead", true);
         yield return new WaitForSeconds(2f);
-        isDead = true;
+        IsDead = true;
     }
 }
