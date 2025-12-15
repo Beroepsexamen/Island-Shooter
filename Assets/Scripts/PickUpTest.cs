@@ -39,3 +39,5 @@ public class GunPickup : MonoBehaviour
         }
     }
 }
+//Make sure that the GunPickup object has a Collider set as Trigger for this to work properly.
+//Make sure the player GameObject has a Shooter component attached.
