@@ -9,6 +9,7 @@ public class ShooterData : ScriptableObject
     public float damage = 10f;
     public float ShootDelay = 0.5f;
     public int maxAmmo = 30;
+    public float reloadTime = 2f;
 
     [Header("UI")]
     public Sprite weaponIcon;
