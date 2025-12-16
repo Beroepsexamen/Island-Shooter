@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79e5837e6d21834ebfd4c6d1837f690, type: 3}
   m_Name: PistolData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
-  range: 30
+  range: 15
   damage: 10
-  ShootDelay: 0.1
-  maxAmmo: 10
-  reloadTime: 30
+  ShootDelay: 1
+  reloadTime: 3
+  maxAmmo: 30
+  clipSize: 10
   weaponIcon: {fileID: 21300000, guid: 31c4e0bb65fd72a42b31cb4fb04fe981, type: 3}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
   effectLifetime: 1
   Gun: {fileID: 5774135656747319559, guid: 16cd16a0d6b8fb84ea602f07508969f6, type: 3}
-  firePoint: {fileID: 8235595629992800021, guid: f992f2e5dad8cf44ca768f6ea33fae3a, type: 3}

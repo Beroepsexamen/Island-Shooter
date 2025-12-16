@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79e5837e6d21834ebfd4c6d1837f690, type: 3}
   m_Name: SniperData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
-  range: 200
-  damage: 10
+  range: 100
+  damage: 100
   ShootDelay: 10
+  reloadTime: 2
   maxAmmo: 3
+  clipSize: 1
   weaponIcon: {fileID: 21300000, guid: 02db3a612d5aed7439813187333c8df9, type: 3}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
   effectLifetime: 1
   Gun: {fileID: 1818409643289234389, guid: e1e5d20457a076a49899e0d99d8acbd7, type: 3}
-  firePoint: {fileID: 3745751158277718417, guid: 43e9a88866f4c63418a76b4727092d6f, type: 3}
