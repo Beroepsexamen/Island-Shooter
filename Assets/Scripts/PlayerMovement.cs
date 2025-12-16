@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        // Get player components
         Animator = PlayerObj.GetComponent<Animator>();
         Orientation = transform.Find("Orientation");
 
@@ -141,15 +142,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void AnimationControl()
     {
+        // Get local velocity of the player
         Vector3 FlatVel = new Vector3(RigidBody.linearVelocity.x, 0f, RigidBody.linearVelocity.z);
         Vector3 LocalVel = PlayerObj.InverseTransformDirection(FlatVel);
 
+        // Animate player movement
         Animator.SetFloat(XVelHash, LocalVel.x);
         Animator.SetFloat(YVelHash, LocalVel.z);
     }
 
     private void Jump()
     {
+        // Make the player jump
         RigidBody.linearVelocity = new Vector3(RigidBody.linearVelocity.x, 0f, RigidBody.linearVelocity.z);
         RigidBody.AddForce(transform.up * JumpForce, ForceMode.Impulse);
     }
