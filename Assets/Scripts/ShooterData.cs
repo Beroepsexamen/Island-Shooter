@@ -8,8 +8,11 @@ public class ShooterData : ScriptableObject
     public float range = 100f;
     public float damage = 10f;
     public float ShootDelay = 0.5f;
-    public int maxAmmo = 30;
     public float reloadTime = 2f;
+
+    [Header("Ammo")]
+    public int maxAmmo = 120;     // totale reserve
+    public int clipSize = 30;     // magazijn grootte
 
     [Header("UI")]
     public Sprite weaponIcon;
