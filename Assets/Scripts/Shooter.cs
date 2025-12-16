@@ -17,6 +17,7 @@ public class Shooter : MonoBehaviour
     private float nextFireTime = 0f;
 
     private Ammo ammo;
+    public AmmoUI ammoUI;
 
     private void Start()
     {
@@ -67,6 +68,8 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
+        UpdateAmmoUI();
+
         currentFirePoint = currentGun.transform.GetChild(0);
 
         ammo.GetClip(currentGunData);
@@ -75,12 +78,23 @@ public class Shooter : MonoBehaviour
             weaponUI.UpdateIcon(currentGunData.weaponIcon);
     }
 
+    void UpdateAmmoUI()
+    {
+        if (ammo == null || ammoUI == null || currentGunData == null) return;
+
+        ammoUI.UpdateAmmo(
+            ammo.GetClip(currentGunData),
+            ammo.GetReserve(currentGunData)
+        );
+    }
+
     void Reload()
     {
         if (currentGunData == null)
             return;
 
         ammo.Reload(currentGunData);
+        UpdateAmmoUI();
     }
 
     public void Shooting()
@@ -96,6 +110,7 @@ public class Shooter : MonoBehaviour
 
         nextFireTime = Time.time + currentGunData.ShootDelay;
         ammo.UseBullet(currentGunData);
+        UpdateAmmoUI();
 
         RaycastHit hit;
 
