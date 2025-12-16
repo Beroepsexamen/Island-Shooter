@@ -12,3 +12,5 @@ public class WeaponsUIscript : MonoBehaviour
 
     
 }
+
+//must make an empty game object and throw this ui script on it and select the weapons ui image.
