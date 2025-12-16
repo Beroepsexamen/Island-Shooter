@@ -1,16 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class AmmoUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TMP_Text ammoText;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateAmmo(int clip, int reserve)
     {
-        
+        ammoText.text = clip + " / " + reserve;
     }
 }

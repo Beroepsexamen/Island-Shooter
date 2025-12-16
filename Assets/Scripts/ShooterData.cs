@@ -24,4 +24,8 @@ public class ShooterData : ScriptableObject
 
     [Header("Gun Prefabs")]
     public GameObject Gun;        // The gun prefab itself
+
+    [Header("Gun Transform")]
+    public Vector3 gunScale = Vector3.one;  // Scale of the gun when held
+
 }
