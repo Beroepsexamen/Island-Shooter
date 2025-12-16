@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 25
   damage: 25
-  ShootDelay: 3
+  ShootDelay: 1
   reloadTime: 2
   maxAmmo: 45
   clipSize: 15
@@ -23,3 +23,4 @@ MonoBehaviour:
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
   effectLifetime: 1
   Gun: {fileID: 5083571243391380039, guid: 14c7f0c01df8df54cba2a8e6da123bf3, type: 3}
+  gunScale: {x: 0.25, y: 0.25, z: 0.18}

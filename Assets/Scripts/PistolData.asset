@@ -23,3 +23,4 @@ MonoBehaviour:
   hitEffect: {fileID: 1908665782743772443, guid: 49c23af503318e943b7b6d0607874a19, type: 3}
   effectLifetime: 1
   Gun: {fileID: 5774135656747319559, guid: 16cd16a0d6b8fb84ea602f07508969f6, type: 3}
+  gunScale: {x: 0.44, y: 0.44, z: 0.44}

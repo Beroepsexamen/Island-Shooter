@@ -2471,6 +2471,10 @@ PrefabInstance:
       value: GunPickup_SMG
       objectReference: {fileID: 0}
     - target: {fileID: 7881666328392557490, guid: 4ee23093a84b8ca4d9510e89409dcc92, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881666328392557490, guid: 4ee23093a84b8ca4d9510e89409dcc92, type: 3}
       propertyPath: m_LocalPosition.x
       value: 707.627
       objectReference: {fileID: 0}
@@ -2602,5 +2606,5 @@ SceneRoots:
   - {fileID: 352566901254141791}
   - {fileID: 838527098}
   - {fileID: 2016563333}
-  - {fileID: 757613590}
   - {fileID: 1503819789}
+  - {fileID: 757613590}
