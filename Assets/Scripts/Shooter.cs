@@ -83,7 +83,7 @@ public class Shooter : MonoBehaviour
 
     public void Shooting()
     {
-        if (currentGunData == null || currentGunData.firePoint == null)
+        if (currentGunData == null || currentFirePoint == null)
             return;
 
         if (!ammo.HasAmmoInClip(currentGunData))
