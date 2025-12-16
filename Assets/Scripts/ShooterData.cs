@@ -24,5 +24,4 @@ public class ShooterData : ScriptableObject
 
     [Header("Gun Prefabs")]
     public GameObject Gun;        // The gun prefab itself
-    public GameObject firePoint;  // FirePoint INSIDE the gun prefab
 }

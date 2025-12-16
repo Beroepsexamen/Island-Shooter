@@ -67,6 +67,8 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
+        currentFirePoint = currentGun.transform.GetChild(0);
+
         ammo.GetClip(currentGunData);
 
         if (weaponUI != null)
