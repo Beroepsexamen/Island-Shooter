@@ -68,6 +68,8 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
+        currentGun.transform.localScale = currentGunData.gunScale;
+
         UpdateAmmoUI();
 
         currentFirePoint = currentGun.transform.GetChild(0);
