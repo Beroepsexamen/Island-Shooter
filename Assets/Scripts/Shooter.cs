@@ -15,13 +15,12 @@ public class Shooter : MonoBehaviour
 
     private float nextFireTime = 0f;
 
-    private int currentAmmo;
-
-    // Ammo per gun opslaan
-    private Dictionary<ShooterData, int> ammoPerGun = new Dictionary<ShooterData, int>();
+    private Ammo ammo;
 
     private void Start()
     {
+        ammo = GetComponent<Ammo>();
+
         if (unlockedGuns.Count > 0)
             EquipGun(0);
     }
@@ -30,6 +29,9 @@ public class Shooter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
             Shooting();
+
+        if (Input.GetKeyDown(KeyCode.R))
+            Reload();
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) EquipGun(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) EquipGun(1);
@@ -43,10 +45,6 @@ public class Shooter : MonoBehaviour
         if (!unlockedGuns.Contains(newGun))
         {
             unlockedGuns.Add(newGun);
-
-            // start ammo voor nieuw wapen
-            ammoPerGun[newGun] = newGun.maxAmmo;
-
             EquipGun(unlockedGuns.Count - 1);
         }
     }
@@ -55,12 +53,6 @@ public class Shooter : MonoBehaviour
     {
         if (index < 0 || index >= unlockedGuns.Count)
             return;
-
-        // sla ammo van huidig wapen op
-        if (currentGunData != null)
-        {
-            ammoPerGun[currentGunData] = currentAmmo;
-        }
 
         currentGunData = unlockedGuns[index];
 
@@ -74,14 +66,18 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
-        // laad ammo van dit wapen
-        if (!ammoPerGun.ContainsKey(currentGunData))
-            ammoPerGun[currentGunData] = currentGunData.maxAmmo;
-
-        currentAmmo = ammoPerGun[currentGunData];
+        ammo.GetClip(currentGunData);
 
         if (weaponUI != null)
             weaponUI.UpdateIcon(currentGunData.weaponIcon);
+    }
+
+    void Reload()
+    {
+        if (currentGunData == null)
+            return;
+
+        ammo.Reload(currentGunData);
     }
 
     public void Shooting()
@@ -89,14 +85,14 @@ public class Shooter : MonoBehaviour
         if (currentGunData == null || currentGunData.firePoint == null)
             return;
 
-        if (currentAmmo <= 0)
+        if (!ammo.HasAmmoInClip(currentGunData))
             return;
 
         if (Time.time < nextFireTime)
             return;
 
         nextFireTime = Time.time + currentGunData.ShootDelay;
-        currentAmmo--;
+        ammo.UseBullet(currentGunData);
 
         RaycastHit hit;
 
