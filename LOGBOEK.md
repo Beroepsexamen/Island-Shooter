@@ -79,3 +79,11 @@
 # -- Vrijdag 12 December
 - Gewerkt aan game design document
 - Movement speed van player en enemy aangepast
+
+# -- Maandag 15 December
+- Fixed gun picup script for new player
+- Made an enemy prefab
+- Bush models toegevoegd
+- Weapon UI gemaakt
+- Armen bewegen mee met de camera
+- Pickup knop toegevoegd
