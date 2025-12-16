@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 100
   damage: 100
-  ShootDelay: 10
+  ShootDelay: 5
   reloadTime: 2
   maxAmmo: 3
   clipSize: 1
