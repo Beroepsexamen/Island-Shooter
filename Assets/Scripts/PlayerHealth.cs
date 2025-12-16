@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int MaxHealth = 7;
-    public int Health;
+    public int maxHealth = 7;
+    public int health;
 
-    public Hearts Hearts;
+    public Hearts hearts;
     
-    void Start()
+    private void Start()
     {
-        Health = MaxHealth;
-        Hearts.UpdateHP(Health);
+        health = maxHealth;
+        hearts.UpdateHP(health);
     }
 
     private void Update()
@@ -23,8 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        Health -= amount;
+        health -= amount;
 
-        Hearts.UpdateHP(Health);
+        hearts.UpdateHP(health);
     }
 }

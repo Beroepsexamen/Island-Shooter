@@ -16,5 +16,5 @@ public class PlayerManager : MonoBehaviour
 
     #endregion
 
-    public GameObject Player;
+    public GameObject player;
 }

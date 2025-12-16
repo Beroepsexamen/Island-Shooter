@@ -3,66 +3,66 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float LookRadius = 10f;
+    public float lookRadius = 10f;
     
-    Transform Target;
-    NavMeshAgent Agent;
-    Animator Animator;
+    private Transform target;
+    private NavMeshAgent agent;
+    private Animator animator;
 
-    private int XVelHash;
-    private int YVelHash;
+    private int xVelHash;
+    private int yVelHash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        Target = PlayerManager.instance.Player.transform;
-        Agent = GetComponent<NavMeshAgent>();
-        Animator = GetComponent<Animator>();
+        target = PlayerManager.instance.player.transform;
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
-        XVelHash = Animator.StringToHash("XVelocity");
-        YVelHash = Animator.StringToHash("YVelocity");
+        xVelHash = Animator.StringToHash("XVelocity");
+        yVelHash = Animator.StringToHash("YVelocity");
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Get the distance from agent to target
-        float Distance = Vector3.Distance(Target.position, transform.position);
+        float distance = Vector3.Distance(target.position, transform.position);
 
         // Set destination if within look radius
-        if (Distance <= LookRadius) Agent.SetDestination(Target.position);
+        if (distance <= lookRadius) agent.SetDestination(target.position);
 
         // Makes the enemy crouch when close to the player
-        if (Distance <= Agent.stoppingDistance)
+        if (distance <= agent.stoppingDistance)
         {
-            Animator.SetBool("IsCrouched", true);
+            animator.SetBool("IsCrouched", true);
             FaceTarget();
         }
         else
         {
-            Animator.SetBool("IsCrouched", false);
+            animator.SetBool("IsCrouched", false);
         }
 
         // Determine local velocity
-        Vector3 FlatVel = new Vector3(Agent.velocity.x, 0, Agent.velocity.z);
-        Vector3 LocalVel = transform.InverseTransformDirection(FlatVel);
+        Vector3 flatVel = new Vector3(agent.velocity.x, 0, agent.velocity.z);
+        Vector3 localVel = transform.InverseTransformDirection(flatVel);
 
         // Set the animation based on local velocity
-        Animator.SetFloat(XVelHash, LocalVel.x);
-        Animator.SetFloat(YVelHash, LocalVel.z);
+        animator.SetFloat(xVelHash, localVel.x);
+        animator.SetFloat(yVelHash, localVel.z);
     }
 
     private void FaceTarget() // Face target when in stopping distance
     {
-        Vector3 Direction = (Target.position - transform.position).normalized;
-        Quaternion LookRotation = Quaternion.LookRotation(new Vector3(Direction.x, 0, Direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, LookRotation, Time.deltaTime * 5f);
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
     // Draw the look radius in the editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, LookRadius);
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

@@ -87,3 +87,13 @@
 - Weapon UI gemaakt
 - Armen bewegen mee met de camera
 - Pickup knop toegevoegd
+
+# -- Dinsdag 16 December
+- Nieuwe schets van eiland
+- Ammo toegevoegd
+- Ammo in HUD geïmplementeerd
+- UML bijna af
+- Nieuwe player prefab
+- Player camera values verandert
+- Muzzle flash gefixt
+- 

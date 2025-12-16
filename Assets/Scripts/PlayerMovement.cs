@@ -3,65 +3,65 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float WalkSpeed = 5f;
-    public float SprintSpeed = 9f;
+    public float walkSpeed = 5f;
+    public float sprintSpeed = 9f;
 
-    private float MoveSpeed;
+    private float moveSpeed;
 
     [Header("Ground Check")]
-    public Transform GroundCheck;
-    public LayerMask Ground;
-    public float GroundDrag = 8f;
-    private bool IsGrounded;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+    public float groundDrag = 8f;
+    private bool isGrounded;
 
     [Header("Slope Handling")]
-    public float MaxSlopeAngle = 25f;
-    private RaycastHit SlopeHit;
+    public float maxSlopeAngle = 25f;
+    private RaycastHit slopeHit;
 
-    public Transform PlayerObj;
+    public Transform playerObj;
 
-    float HorizontalInput;
-    float VerticalInput;
+    public float horizontalInput;
+    public float verticalInput;
 
     [Header("Jumping")]
-    public float JumpCooldown = 0.5f;
-    public float AirMultiplier = 0.4f;
-    public float JumpForce = 12f;
-    private bool ReadyToJump = true;
+    public float jumpCooldown = 0.5f;
+    public float airMultiplier = 0.4f;
+    public float jumpForce = 12f;
+    private bool readyToJump = true;
 
-    Vector3 MoveDirection;
-    Animator Animator;
+    private Vector3 moveDirection;
+    private Animator playerAnimator;
 
-    private int XVelHash;
-    private int YVelHash;
+    private int xVelHash;
+    private int yVelHash;
 
-    Rigidbody RigidBody;
+    private Rigidbody rb;
 
 
     private void Start()
     {
         // Get player components
-        Animator = PlayerObj.GetComponent<Animator>();
+        playerAnimator = playerObj.GetComponent<Animator>();
 
-        XVelHash = Animator.StringToHash("XVelocity");
-        YVelHash = Animator.StringToHash("YVelocity");
+        xVelHash = Animator.StringToHash("XVelocity");
+        yVelHash = Animator.StringToHash("YVelocity");
 
-        RigidBody = GetComponent<Rigidbody>();
-        RigidBody.freezeRotation = true;
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
     }
 
     private void Update()
     {
         // Check if on ground
-        IsGrounded = Physics.Raycast(GroundCheck.position, Vector3.down, 0.1f, Ground);
+        isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, 0.1f, groundLayer);
 
         // Set move speed
-        MoveSpeed = Input.GetKey(KeyCode.LeftShift) ? SprintSpeed : WalkSpeed;
+        moveSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
 
-        if (IsGrounded)
-            RigidBody.linearDamping = GroundDrag;
+        if (isGrounded)
+            rb.linearDamping = groundDrag;
         else
-            RigidBody.linearDamping = 0;
+            rb.linearDamping = 0;
 
         MyInput();
         SpeedControl();
@@ -75,44 +75,44 @@ public class PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
-        HorizontalInput = Input.GetAxisRaw("Horizontal");
-        VerticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
         // When to jump
-        if (Input.GetKey(KeyCode.Space) && ReadyToJump && IsGrounded)
+        if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
         {
-            ReadyToJump = false;
+            readyToJump = false;
 
             Jump();
 
-            Invoke(nameof(ResetJump), JumpCooldown);
+            Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
 
     private void MovePlayer()
     {
         // Calculate movement direction
-        MoveDirection = PlayerObj.forward * VerticalInput + PlayerObj.right * HorizontalInput;
+        moveDirection = playerObj.forward * verticalInput + playerObj.right * horizontalInput;
 
         // On slope
         if (OnSlope())
         {
-            RigidBody.AddForce(GetSlopeMoveDirection() * MoveSpeed * 20f, ForceMode.Force);
+            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
 
-            if (RigidBody.linearVelocity.y <= 0)
-                RigidBody.AddForce(Vector3.down * 80f, ForceMode.Force);
+            if (rb.linearVelocity.y <= 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
         // On ground
-        if (IsGrounded)
-            RigidBody.AddForce(MoveDirection.normalized * MoveSpeed * 10f, ForceMode.Force);
+        if (isGrounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // In air
-        else if (!IsGrounded)
-            RigidBody.AddForce(MoveDirection.normalized * MoveSpeed * 10f * AirMultiplier, ForceMode.Force);
+        else if (!isGrounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
         // Turn off gravity while on slope
-        RigidBody.useGravity = !OnSlope();
+        rb.useGravity = !OnSlope();
     }
 
     private void SpeedControl()
@@ -120,19 +120,19 @@ public class PlayerMovement : MonoBehaviour
         // Limiting speed on slopes
         if (OnSlope())
         {
-            if (RigidBody.linearVelocity.magnitude > MoveSpeed)
-                RigidBody.linearVelocity = RigidBody.linearVelocity.normalized * MoveSpeed;
+            if (rb.linearVelocity.magnitude > moveSpeed)
+                rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
         }
 
         // Limit velocity on ground
         else
         {
-            Vector3 FlatVel = new Vector3(RigidBody.linearVelocity.x, 0f, RigidBody.linearVelocity.z);
+            Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
-            if (FlatVel.magnitude > MoveSpeed)
+            if (flatVel.magnitude > moveSpeed)
             {
-                Vector3 LimitedVel = FlatVel.normalized * MoveSpeed;
-                RigidBody.linearVelocity = new Vector3(LimitedVel.x, RigidBody.linearVelocity.y, LimitedVel.z);
+                Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
             }
         }
     }
@@ -140,33 +140,33 @@ public class PlayerMovement : MonoBehaviour
     private void AnimationControl()
     {
         // Get local velocity of the player
-        Vector3 FlatVel = new Vector3(RigidBody.linearVelocity.x, 0f, RigidBody.linearVelocity.z);
-        Vector3 LocalVel = PlayerObj.InverseTransformDirection(FlatVel);
+        Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        Vector3 localVel = playerObj.InverseTransformDirection(flatVel);
 
         // Animate player movement
-        Animator.SetFloat(XVelHash, LocalVel.x);
-        Animator.SetFloat(YVelHash, LocalVel.z);
+        playerAnimator.SetFloat(xVelHash, localVel.x);
+        playerAnimator.SetFloat(yVelHash, localVel.z);
     }
 
     private void Jump()
     {
         // Make the player jump
-        RigidBody.linearVelocity = new Vector3(RigidBody.linearVelocity.x, 0f, RigidBody.linearVelocity.z);
-        RigidBody.AddForce(transform.up * JumpForce, ForceMode.Impulse);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     private void ResetJump()
     {
-        ReadyToJump = true;
+        readyToJump = true;
     }
 
     private bool OnSlope()
     {
         // Check if player is on a slope
-        if (Physics.Raycast(GroundCheck.position, Vector3.down, out SlopeHit, 0.2f))
+        if (Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, 0.2f))
         {
-            float Angle = Vector3.Angle(Vector3.up, SlopeHit.normal);
-            return Angle < MaxSlopeAngle && Angle != 0;
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
         }
         return false;
     }
@@ -174,6 +174,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         // Get the direction to move on the slope
-        return Vector3.ProjectOnPlane(MoveDirection, SlopeHit.normal).normalized;
+        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 }

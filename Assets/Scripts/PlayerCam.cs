@@ -5,30 +5,30 @@ public class PlayerCam : MonoBehaviour
     public float SensX = 150f;
     public float SensY = 150f;
 
-    public Transform PlayerObj;
+    public Transform playerObj;
 
-    float XRotation;
-    float YRotation;
+    private float xRotation;
+    private float yRotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center of screen
         Cursor.visible = false; // Hide cursor
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float MouseX = Input.GetAxis("Mouse X") * SensX * Time.deltaTime;
-        float MouseY = Input.GetAxis("Mouse Y") * SensY * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * SensX * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * SensY * Time.deltaTime;
 
-        YRotation += MouseX;
-        XRotation -= MouseY;
+        yRotation += mouseX;
+        xRotation -= mouseY;
 
-        XRotation = Mathf.Clamp(XRotation, -60f, 60f); // Limit vertical look angle
+        xRotation = Mathf.Clamp(xRotation, -60f, 60f); // Limit vertical look angle
 
-        transform.rotation = Quaternion.Euler(XRotation, YRotation, 0f); // Rotate camera based on mouse movement
-        PlayerObj.rotation = Quaternion.Euler(0f, YRotation, 0f); // Rotate player orientation based on mouse movement
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f); // Rotate camera based on mouse movement
+        playerObj.rotation = Quaternion.Euler(0f, yRotation, 0f); // Rotate player orientation based on mouse movement
     }
 }
