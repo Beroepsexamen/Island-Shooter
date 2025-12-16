@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94acbe374f6bfe4449636d9932f4877c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
-  fpsCam: {fileID: 0}
+  fpsCam: {fileID: 5003788124992406593}
   gunHolder: {fileID: 218328105460278854}
   weaponUI: {fileID: 0}
   unlockedGuns:
@@ -2922,7 +2922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5836417618680189430}
   m_Layer: 0
-  m_Name: PlayerPrefab
+  m_Name: FinalPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4046,7 +4046,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 754977851067337890}
+        transform: {fileID: 8932486267882319741}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -6552,7 +6552,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 754977851067337890}
+        transform: {fileID: 8932486267882319741}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
