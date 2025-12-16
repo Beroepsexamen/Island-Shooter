@@ -12,6 +12,7 @@ public class Shooter : MonoBehaviour
 
     private ShooterData currentGunData;
     private GameObject currentGun;
+    private Transform currentFirePoint;
 
     private float nextFireTime = 0f;
 
@@ -74,6 +75,8 @@ public class Shooter : MonoBehaviour
             gunHolder
         );
 
+        currentFirePoint = currentGun.transform.GetChild(0);
+
         // laad ammo van dit wapen
         if (!ammoPerGun.ContainsKey(currentGunData))
             ammoPerGun[currentGunData] = currentGunData.maxAmmo;
@@ -108,8 +111,8 @@ public class Shooter : MonoBehaviour
         {
             GameObject fire = Instantiate(
                 currentGunData.fireEffect,
-                currentGunData.firePoint.transform.position,
-                currentGunData.firePoint.transform.rotation
+                currentFirePoint.position,
+                currentFirePoint.rotation
             );
 
             GameObject hitFX = Instantiate(

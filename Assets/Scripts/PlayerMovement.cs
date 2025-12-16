@@ -3,19 +3,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float WalkSpeed;
-    public float SprintSpeed;
+    public float WalkSpeed = 5f;
+    public float SprintSpeed = 9f;
 
     private float MoveSpeed;
 
     [Header("Ground Check")]
     public Transform GroundCheck;
     public LayerMask Ground;
-    public float GroundDrag;
+    public float GroundDrag = 8f;
     private bool IsGrounded;
 
     [Header("Slope Handling")]
-    public float MaxSlopeAngle;
+    public float MaxSlopeAngle = 25f;
     private RaycastHit SlopeHit;
 
     public Transform PlayerObj;
@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
     private bool ReadyToJump = true;
 
     Vector3 MoveDirection;
-
-    Transform Orientation;
     Animator Animator;
 
     private int XVelHash;
@@ -44,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get player components
         Animator = PlayerObj.GetComponent<Animator>();
-        Orientation = transform.Find("Orientation");
 
         XVelHash = Animator.StringToHash("XVelocity");
         YVelHash = Animator.StringToHash("YVelocity");
