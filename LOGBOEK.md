@@ -96,4 +96,4 @@
 - Nieuwe player prefab
 - Player camera values verandert
 - Muzzle flash gefixt
-- 
+- Crosshair is verandert

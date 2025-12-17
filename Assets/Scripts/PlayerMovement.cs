@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform playerObj;
 
-    public float horizontalInput;
-    public float verticalInput;
+    private float horizontalInput;
+    private float verticalInput;
 
     [Header("Jumping")]
     public float jumpCooldown = 0.5f;
