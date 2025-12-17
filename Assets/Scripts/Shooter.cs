@@ -128,6 +128,8 @@ public class Shooter : MonoBehaviour
                 currentFirePoint.rotation
             );
 
+            fire.transform.parent = currentFirePoint;
+
             GameObject hitFX = Instantiate(
                 currentGunData.hitEffect,
                 hit.point,

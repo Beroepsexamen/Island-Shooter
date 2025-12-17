@@ -1948,8 +1948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseHandler
   playerHealth: {fileID: 6380766593387170247}
   deathCanvas: {fileID: 7190078483116435958}
-  playerAnimator: {fileID: 0}
-  playerCam: {fileID: 0}
+  playerAnimator: {fileID: 3753377612232231611}
+  playerCam: {fileID: 4316537924420543176}
   isDead: 0
 --- !u!4 &2084125731462832535
 Transform:
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2047f3adeb7c18442b0b39db3143d3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  player: {fileID: 0}
+  player: {fileID: 8062458409228569003}
 --- !u!4 &2540541622269966394
 Transform:
   m_ObjectHideFlags: 0
