@@ -97,3 +97,9 @@
 - Player camera values verandert
 - Muzzle flash gefixt
 - Crosshair is verandert
+
+# -- Woensdag 17 December
+- Muzzle flash positie gefixt
+- Map verbetert
+- Enemy health toegevoegd
+- UML afgemaakt
