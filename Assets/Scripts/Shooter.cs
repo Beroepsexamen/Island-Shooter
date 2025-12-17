@@ -110,10 +110,6 @@ public class Shooter : MonoBehaviour
         if (Time.time < nextFireTime)
             return;
 
-        nextFireTime = Time.time + currentGunData.ShootDelay;
-        ammo.UseBullet(currentGunData);
-        UpdateAmmoUI();
-
         RaycastHit hit;
 
         if (Physics.Raycast(
@@ -122,6 +118,10 @@ public class Shooter : MonoBehaviour
             out hit,
             currentGunData.range))
         {
+            nextFireTime = Time.time + currentGunData.ShootDelay;
+            ammo.UseBullet(currentGunData);
+            UpdateAmmoUI();
+
             GameObject fire = Instantiate(
                 currentGunData.fireEffect,
                 currentFirePoint.position,
@@ -141,3 +141,4 @@ public class Shooter : MonoBehaviour
         }
     }
 }
+
