@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
@@ -29,6 +30,6 @@ public class PlayerCam : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -60f, 60f); // Limit vertical look angle
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f); // Rotate camera based on mouse movement
-        playerObj.rotation = Quaternion.Euler(0f, yRotation, 0f); // Rotate player orientation based on mouse movement
+        playerObj.rotation = Quaternion.Slerp(playerObj.rotation, Quaternion.Euler(0f, yRotation, 0f), Time.deltaTime * 10f); // Rotate player orientation based on mouse movement
     }
 }
