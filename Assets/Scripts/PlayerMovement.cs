@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jumping")]
     public float jumpCooldown = 0.5f;
     public float airMultiplier = 0.4f;
-    public float jumpForce = 12f;
+    public float jumpForce = 7f;
     private bool readyToJump = true;
 
     private Vector3 moveDirection;

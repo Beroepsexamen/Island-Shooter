@@ -1226,7 +1226,7 @@ MonoBehaviour:
   playerObj: {fileID: 4163245112016587230}
   jumpCooldown: 0.5
   airMultiplier: 0.4
-  jumpForce: 12
+  jumpForce: 7
 --- !u!4 &1028603162945115469
 Transform:
   m_ObjectHideFlags: 0
@@ -5283,6 +5283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   lookRadius: 10
+  shootRange: 20
+  health: 100
 --- !u!1 &5336152663256322179
 GameObject:
   m_ObjectHideFlags: 0
