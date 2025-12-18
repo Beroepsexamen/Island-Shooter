@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 1601578927556543192}
   - component: {fileID: 5962909542977136128}
   - component: {fileID: 2957824822204829050}
+  - component: {fileID: 341435101639330656}
+  - component: {fileID: 3718719049451234282}
+  - component: {fileID: 3926641437108577009}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -59,10 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d746e3a2a0722494a8dbfc676aca146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseHandler
-  PlayerHealth: {fileID: 5962909542977136128}
-  DeathCanvas: {fileID: 0}
-  PlayerAnimator: {fileID: 0}
-  PlayerCam: {fileID: 0}
+  playerHealth: {fileID: 5962909542977136128}
+  deathCanvas: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  playerCam: {fileID: 0}
   isDead: 0
 --- !u!114 &5962909542977136128
 MonoBehaviour:
@@ -76,9 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477f2cb4d298ec9428d9ee461669a5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  MaxHealth: 7
-  Health: 0
-  Hearts: {fileID: 0}
+  maxHealth: 7
+  health: 0
+  hearts: {fileID: 341435101639330656}
 --- !u!114 &2957824822204829050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,4 +94,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2047f3adeb7c18442b0b39db3143d3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  Player: {fileID: 0}
+  player: {fileID: 0}
+--- !u!114 &341435101639330656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371812249464679938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5c37e684a43b94ba3c42d331889a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hearts
+  hpImages: {fileID: 0}
+  hpSprites:
+  - {fileID: 21300000, guid: ebb61bc28c8a201449fe53f8d2c52a85, type: 3}
+  - {fileID: 21300000, guid: 019bf87f821ad1f46b8e4851c41527a7, type: 3}
+  - {fileID: 21300000, guid: ca69b73ff3fdb104aa05b53d12a7004d, type: 3}
+  - {fileID: 21300000, guid: 44b71681336e98d4aaa0d95d417f6276, type: 3}
+  - {fileID: 21300000, guid: 83441c973c67b184eb3c460fb2eb3e11, type: 3}
+  - {fileID: 21300000, guid: 0b8091ef209039a4d9c451220e2fd4d5, type: 3}
+  - {fileID: 21300000, guid: 9ae0c214c8b55b043af84283a986722e, type: 3}
+--- !u!114 &3718719049451234282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371812249464679938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3c1f95781a52448bbc7c361024902b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmmoUI
+  ammoText: {fileID: 0}
+--- !u!114 &3926641437108577009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371812249464679938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c6c6cbe53c224aac11573c41bbe0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponsUIscript
+  iconImage: {fileID: 0}
