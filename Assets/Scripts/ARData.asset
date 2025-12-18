@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ARData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 25
-  damage: 25
-  ShootDelay: 1
+  damage: 15
+  ShootDelay: 0.5
   reloadTime: 2
   maxAmmo: 45
   clipSize: 15

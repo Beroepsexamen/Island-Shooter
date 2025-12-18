@@ -110,6 +110,10 @@ public class Shooter : MonoBehaviour
         if (Time.time < nextFireTime)
             return;
 
+        nextFireTime = Time.time + currentGunData.ShootDelay;
+        ammo.UseBullet(currentGunData);
+        UpdateAmmoUI();
+
         RaycastHit hit;
 
         if (Physics.Raycast(
@@ -118,17 +122,18 @@ public class Shooter : MonoBehaviour
             out hit,
             currentGunData.range))
         {
-            nextFireTime = Time.time + currentGunData.ShootDelay;
-            ammo.UseBullet(currentGunData);
-            UpdateAmmoUI();
+            EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage((int)currentGunData.damage);
+            }
 
             GameObject fire = Instantiate(
                 currentGunData.fireEffect,
                 currentFirePoint.position,
-                currentFirePoint.rotation
+                currentFirePoint.rotation,
+                currentFirePoint
             );
-
-            fire.transform.parent = currentFirePoint;
 
             GameObject hitFX = Instantiate(
                 currentGunData.hitEffect,
@@ -141,4 +146,3 @@ public class Shooter : MonoBehaviour
         }
     }
 }
-
