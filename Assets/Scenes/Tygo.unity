@@ -119,43 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &75901392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8371812249464679938, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+--- !u!114 &75901393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 341435101639330656, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
   m_PrefabInstance: {fileID: 502696602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &75901393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75901392}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db5c37e684a43b94ba3c42d331889a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hearts
-  hpImages: {fileID: 208481978}
-  hpSprites:
-  - {fileID: 21300000, guid: ebb61bc28c8a201449fe53f8d2c52a85, type: 3}
-  - {fileID: 21300000, guid: 019bf87f821ad1f46b8e4851c41527a7, type: 3}
-  - {fileID: 21300000, guid: ca69b73ff3fdb104aa05b53d12a7004d, type: 3}
-  - {fileID: 21300000, guid: 44b71681336e98d4aaa0d95d417f6276, type: 3}
-  - {fileID: 21300000, guid: 83441c973c67b184eb3c460fb2eb3e11, type: 3}
-  - {fileID: 21300000, guid: 0b8091ef209039a4d9c451220e2fd4d5, type: 3}
-  - {fileID: 21300000, guid: 9ae0c214c8b55b043af84283a986722e, type: 3}
 --- !u!114 &75901395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5962909542977136128, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
   m_PrefabInstance: {fileID: 502696602}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75901392}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 477f2cb4d298ec9428d9ee461669a5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!114 &75901399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3926641437108577009, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+  m_PrefabInstance: {fileID: 502696602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c6c6cbe53c224aac11573c41bbe0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponsUIscript
+--- !u!114 &75901400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3718719049451234282, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+  m_PrefabInstance: {fileID: 502696602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3c1f95781a52448bbc7c361024902b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmmoUI
 --- !u!1 &124916196
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +674,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 341435101639330656, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+      propertyPath: hpImages
+      value: 
+      objectReference: {fileID: 208481978}
     - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: playerCam
       value: 
@@ -687,6 +698,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 282838066}
+    - target: {fileID: 3718719049451234282, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 355663840}
+    - target: {fileID: 3926641437108577009, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+      propertyPath: iconImage
+      value: 
+      objectReference: {fileID: 2028333165}
     - target: {fileID: 5962909542977136128, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: hearts
       value: 
@@ -738,10 +757,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8371812249464679938, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 75901393}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
 --- !u!1 &508532267
 GameObject:
@@ -1005,11 +1021,11 @@ PrefabInstance:
     - target: {fileID: 4007241526876048522, guid: bbcf9c2ea3359d94989396fe0d9f01a8, type: 3}
       propertyPath: ammoUI
       value: 
-      objectReference: {fileID: 1503819788}
+      objectReference: {fileID: 75901400}
     - target: {fileID: 4007241526876048522, guid: bbcf9c2ea3359d94989396fe0d9f01a8, type: 3}
       propertyPath: weaponUI
       value: 
-      objectReference: {fileID: 2016563334}
+      objectReference: {fileID: 75901399}
     - target: {fileID: 4504536695914804835, guid: bbcf9c2ea3359d94989396fe0d9f01a8, type: 3}
       propertyPath: m_Name
       value: FinalPlayer
@@ -1731,51 +1747,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347306707}
   m_CullTransparentMesh: 1
---- !u!1 &1503819787
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1503819789}
-  - component: {fileID: 1503819788}
-  m_Layer: 0
-  m_Name: Ammo manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1503819788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503819787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b3c1f95781a52448bbc7c361024902b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AmmoUI
-  ammoText: {fileID: 355663840}
---- !u!4 &1503819789
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503819787}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 853.289, y: 9.99805, z: 358.72974}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513472630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,51 +2415,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &2016563332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2016563333}
-  - component: {fileID: 2016563334}
-  m_Layer: 0
-  m_Name: Gun ui manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2016563333
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016563332}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -994.8967, y: 456.39197, z: -1042.5247}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2016563334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016563332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91c6c6cbe53c224aac11573c41bbe0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WeaponsUIscript
-  iconImage: {fileID: 2028333165}
 --- !u!1 &2028333163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,8 +2832,6 @@ SceneRoots:
   - {fileID: 3637566425953811542}
   - {fileID: 352566901254141791}
   - {fileID: 838527098}
-  - {fileID: 2016563333}
-  - {fileID: 1503819789}
   - {fileID: 757613590}
   - {fileID: 885309876}
   - {fileID: 1290470470}
