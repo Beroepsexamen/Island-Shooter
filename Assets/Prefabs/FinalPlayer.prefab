@@ -1366,6 +1366,7 @@ MonoBehaviour:
   weaponUI: {fileID: 0}
   unlockedGuns:
   - {fileID: 11400000, guid: 0cb05611c67718941a299808bd0b0d3c, type: 2}
+  ammoUI: {fileID: 0}
 --- !u!114 &2182248240928942640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,7 +1578,7 @@ Transform:
   m_GameObject: {fileID: 4504536695914804835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.04729, y: 0, z: -6.77597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1910,18 +1911,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9241bde35b6bc46986d2d4b8b98e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  WalkSpeed: 5
-  SprintSpeed: 9
-  GroundCheck: {fileID: 2350867508875747009}
-  Ground:
+  walkSpeed: 5
+  sprintSpeed: 9
+  groundCheck: {fileID: 2350867508875747009}
+  groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  GroundDrag: 8
-  MaxSlopeAngle: 25
-  PlayerObj: {fileID: 1175994848227774472}
-  JumpCooldown: 0.5
-  AirMultiplier: 0.4
-  JumpForce: 7
+  groundDrag: 8
+  maxSlopeAngle: 25
+  playerObj: {fileID: 1175994848227774472}
+  jumpCooldown: 0.5
+  airMultiplier: 0.4
+  jumpForce: 12
 --- !u!1 &5211234422778497000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,7 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
   SensX: 150
   SensY: 150
-  PlayerObj: {fileID: 1175994848227774472}
+  playerObj: {fileID: 1175994848227774472}
 --- !u!1 &7177324767497341269
 GameObject:
   m_ObjectHideFlags: 0
