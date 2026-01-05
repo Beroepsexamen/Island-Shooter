@@ -532,7 +532,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.4580063, y: 0.4966224, z: 0.54311526, w: 0.49862033}
   m_LocalPosition: {x: 0.005599928, y: 0.16599989, z: 0.0414}
-  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_LocalScale: {x: 0.44000012, y: 0.44000018, z: 0.4399999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6056216768531412320}
@@ -562,7 +562,7 @@ Transform:
   m_GameObject: {fileID: 1648877300848464570}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4999971, y: -0.4999969, z: 0.5000032, w: 0.5000028}
-  m_LocalPosition: {x: 0.13, y: -0.157, z: 0.209}
+  m_LocalPosition: {x: 0.095, y: 0.105, z: 0.156}
   m_LocalScale: {x: 0.06666666, y: 0.066666685, z: 0.0666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1366,6 +1366,8 @@ MonoBehaviour:
   weaponUI: {fileID: 0}
   unlockedGuns:
   - {fileID: 11400000, guid: 0cb05611c67718941a299808bd0b0d3c, type: 2}
+  - {fileID: 11400000, guid: 1becd419d4bc8694f8110ba048e9b44d, type: 2}
+  - {fileID: 11400000, guid: 79d37347ae2cf9a4f8cf694735ef0d29, type: 2}
   ammoUI: {fileID: 0}
 --- !u!114 &2182248240928942640
 MonoBehaviour:
@@ -1922,7 +1924,7 @@ MonoBehaviour:
   playerObj: {fileID: 1175994848227774472}
   jumpCooldown: 0.5
   airMultiplier: 0.4
-  jumpForce: 12
+  jumpForce: 7
 --- !u!1 &5211234422778497000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2158,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -3240,7 +3242,7 @@ Transform:
   m_GameObject: {fileID: 8414354132059182781}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000008923542, y: 1.13686824e-13, z: 3.6378457e-12, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0.15, y: -0.1, z: 1}
   m_LocalScale: {x: 0.33333334, y: 0.33333343, z: 0.33333343}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3428,7 +3430,7 @@ Transform:
   m_GameObject: {fileID: 8776814617449131731}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000008923542, y: 1.13686824e-13, z: 3.6378457e-12, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.3, z: 1}
+  m_LocalPosition: {x: 0.7, y: -0.4, z: 1}
   m_LocalScale: {x: 0.33333334, y: 0.33333343, z: 0.33333343}
   m_ConstrainProportionsScale: 1
   m_Children: []
