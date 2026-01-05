@@ -110,39 +110,48 @@ public class Shooter : MonoBehaviour
         if (Time.time < nextFireTime)
             return;
 
-        nextFireTime = Time.time + currentGunData.ShootDelay;
-        ammo.UseBullet(currentGunData);
-        UpdateAmmoUI();
-
         RaycastHit hit;
 
-        if (Physics.Raycast(
+        // Doe eerst de raycast
+        if (!Physics.Raycast(
             fpsCam.transform.position,
             fpsCam.transform.forward,
             out hit,
             currentGunData.range))
         {
-            EnemyController enemy = hit.collider.GetComponent<EnemyController>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage((int)currentGunData.damage);
-            }
-
-            GameObject fire = Instantiate(
-                currentGunData.fireEffect,
-                currentFirePoint.position,
-                currentFirePoint.rotation,
-                currentFirePoint
-            );
-
-            GameObject hitFX = Instantiate(
-                currentGunData.hitEffect,
-                hit.point,
-                Quaternion.LookRotation(hit.normal)
-            );
-
-            Destroy(fire, currentGunData.effectLifetime);
-            Destroy(hitFX, currentGunData.effectLifetime);
+            return; //  niks geraakt = geen kogel gebruiken
         }
+
+        // Pas NU schieten
+        nextFireTime = Time.time + currentGunData.ShootDelay;
+
+        ammo.UseBullet(currentGunData);
+        UpdateAmmoUI();
+
+        // Damage
+        EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage((int)currentGunData.damage);
+        }
+
+        // Muzzle flash
+        GameObject fire = Instantiate(
+            currentGunData.fireEffect,
+            currentFirePoint.position,
+            currentFirePoint.rotation,
+            currentFirePoint
+        );
+
+        // Hit effect
+        GameObject hitFX = Instantiate(
+            currentGunData.hitEffect,
+            hit.point,
+            Quaternion.LookRotation(hit.normal)
+        );
+
+        Destroy(fire, currentGunData.effectLifetime);
+        Destroy(hitFX, currentGunData.effectLifetime);
     }
+
 }
