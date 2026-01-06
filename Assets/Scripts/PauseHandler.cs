@@ -9,6 +9,8 @@ public class PauseHandler : MonoBehaviour
     public Canvas deathCanvas;
     public Animator playerAnimator;
     public PlayerCam playerCam;
+    public Canvas playerHUD;
+    public GameObject player;
     public bool isDead = false;
 
     private void Update()
@@ -27,6 +29,8 @@ public class PauseHandler : MonoBehaviour
         {
             deathCanvas.enabled = true;
             playerCam.enabled = false;
+            playerHUD.enabled = false;
+            player.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
