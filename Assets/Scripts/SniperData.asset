@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 100
   ShootDelay: 2
   reloadTime: 2
-  maxAmmo: 3
+  maxAmmo: 5
   clipSize: 1
   weaponIcon: {fileID: 21300000, guid: 02db3a612d5aed7439813187333c8df9, type: 3}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
