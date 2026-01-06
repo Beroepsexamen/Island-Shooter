@@ -1,27 +1,28 @@
 using UnityEngine;
-using UnityEngine.UI; // of TMPro als je TextMeshPro gebruikt
+using UnityEngine.UI;
 
-public class GunPickup : MonoBehaviour
+public class AmmoPickup : MonoBehaviour
 {
-    public ShooterData gunData;
-    public GameObject pickupTextUI; // Zet hier het UI prefab of object (Text)
+    public ShooterData gunType;
+    public int ammoAmount = 30;
+    public GameObject pickupTextUI;
 
     private bool canPickup = false;
-    private Shooter shooter;
+    private Ammo ammo;
 
     private void Start()
     {
         if (pickupTextUI != null)
-            pickupTextUI.SetActive(false); // start onzichtbaar
+            pickupTextUI.SetActive(false);
     }
 
     private void Update()
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E))
         {
-            if (shooter != null && gunData != null)
+            if (ammo != null && gunType != null)
             {
-                shooter.AddGun(gunData);
+                ammo.AddAmmo(gunType, ammoAmount);
                 Destroy(gameObject);
             }
         }
@@ -29,8 +30,8 @@ public class GunPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        shooter = other.GetComponent<Shooter>();
-        if (shooter != null)
+        ammo = other.GetComponent<Ammo>();
+        if (ammo != null)
         {
             canPickup = true;
             if (pickupTextUI != null)
@@ -40,10 +41,10 @@ public class GunPickup : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Shooter>() != null)
+        if (other.GetComponent<Ammo>() != null)
         {
             canPickup = false;
-            shooter = null;
+            ammo = null;
             if (pickupTextUI != null)
                 pickupTextUI.SetActive(false);
         }

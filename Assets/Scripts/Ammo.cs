@@ -3,69 +3,72 @@ using System.Collections.Generic;
 
 public class Ammo : MonoBehaviour
 {
-    private class AmmoData
+    
+    private Dictionary<ShooterData, int> ammoClips = new Dictionary<ShooterData, int>();
+    
+    private Dictionary<ShooterData, int> ammoReserve = new Dictionary<ShooterData, int>();
+
+    
+    public void GetClip(ShooterData gunData)
     {
-        public int reserve;
-        public int clip;
+        if (!ammoClips.ContainsKey(gunData))
+            ammoClips[gunData] = gunData.clipSize;
+
+        if (!ammoReserve.ContainsKey(gunData))
+            ammoReserve[gunData] = gunData.maxAmmo - ammoClips[gunData];
     }
 
-    private Dictionary<ShooterData, AmmoData> ammoPerGun =
-        new Dictionary<ShooterData, AmmoData>();
-
-    private AmmoData GetData(ShooterData gun)
+    public int GetClipAmount(ShooterData gunData)
     {
-        if (!ammoPerGun.ContainsKey(gun))
-        {
-            AmmoData data = new AmmoData();
-            data.reserve = gun.maxAmmo;
-            data.clip = gun.clipSize;
-            ammoPerGun.Add(gun, data);
-        }
-
-        return ammoPerGun[gun];
+        if (!ammoClips.ContainsKey(gunData)) return 0;
+        return ammoClips[gunData];
     }
 
-    public bool HasAmmoInClip(ShooterData gun)
+    public int GetReserveAmount(ShooterData gunData)
     {
-        return GetData(gun).clip > 0;
+        if (!ammoReserve.ContainsKey(gunData)) return 0;
+        return ammoReserve[gunData];
     }
 
-    public void UseBullet(ShooterData gun)
+    public bool HasAmmoInClip(ShooterData gunData)
     {
-        AmmoData data = GetData(gun);
-        data.clip = Mathf.Max(0, data.clip - 1);
+        return GetClipAmount(gunData) > 0;
     }
 
-    public void Reload(ShooterData gun)
+    public void UseBullet(ShooterData gunData)
     {
-        AmmoData data = GetData(gun);
+        if (!ammoClips.ContainsKey(gunData)) return;
+        if (ammoClips[gunData] <= 0) return;
 
-        if (data.clip == gun.clipSize)
-            return;
-
-        if (data.reserve <= 0)
-            return;
-
-        int needed = gun.clipSize - data.clip;
-        int taken = Mathf.Min(needed, data.reserve);
-
-        data.reserve -= taken;
-        data.clip += taken;
+        ammoClips[gunData]--;
     }
 
-    public int GetClip(ShooterData gun)
+    public void Reload(ShooterData gunData)
     {
-        return GetData(gun).clip;
+        if (!ammoClips.ContainsKey(gunData)) return;
+        if (!ammoReserve.ContainsKey(gunData)) return;
+
+        int needed = gunData.clipSize - ammoClips[gunData];
+        int toReload = Mathf.Min(needed, ammoReserve[gunData]);
+
+        ammoClips[gunData] += toReload;
+        ammoReserve[gunData] -= toReload;
     }
 
-    public int GetReserve(ShooterData gun)
+   
+    public void AddAmmo(ShooterData gunData, int amount)
     {
-        return GetData(gun).reserve;
-    }
+        if (gunData == null) return;
 
-    public void AddReserveAmmo(ShooterData gun, int amount)
-    {
-        AmmoData data = GetData(gun);
-        data.reserve = Mathf.Min(gun.maxAmmo, data.reserve + amount);
+        if (!ammoClips.ContainsKey(gunData))
+            ammoClips[gunData] = 0;
+
+        if (!ammoReserve.ContainsKey(gunData))
+            ammoReserve[gunData] = 0;
+
+        ammoReserve[gunData] += amount;
+
+        if (ammoReserve[gunData] > gunData.maxAmmo)
+            ammoReserve[gunData] = gunData.maxAmmo;
     }
 }
