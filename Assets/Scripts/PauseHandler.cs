@@ -10,8 +10,13 @@ public class PauseHandler : MonoBehaviour
     public Animator playerAnimator;
     public PlayerCam playerCam;
     public Canvas playerHUD;
-    public GameObject player;
+    private GameObject player;
     public bool isDead = false;
+
+    private void Start()
+    {
+        player = PlayerManager.instance.player;
+    }
 
     private void Update()
     {

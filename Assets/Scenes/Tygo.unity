@@ -736,9 +736,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 208481978}
     - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 282838066}
+    - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 492861667}
+    - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+      propertyPath: playerHUD
+      value: 
+      objectReference: {fileID: 838527097}
     - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: deathCanvas
       value: 
