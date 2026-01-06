@@ -85,8 +85,8 @@ public class Shooter : MonoBehaviour
         if (ammo == null || ammoUI == null || currentGunData == null) return;
 
         ammoUI.UpdateAmmo(
-            ammo.GetClip(currentGunData),
-            ammo.GetReserve(currentGunData)
+            ammo.GetClipAmount(currentGunData),
+            ammo.GetReserveAmount(currentGunData)
         );
     }
 
