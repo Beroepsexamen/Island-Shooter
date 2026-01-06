@@ -6260,8 +6260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f826418aaba8c3d46be0d5d5906388d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  SensX: 150
-  SensY: 150
+  SensX: 300
+  SensY: 300
   playerObj: {fileID: 7151453260871149954}
 --- !u!1 &7011698966785197666
 GameObject:
