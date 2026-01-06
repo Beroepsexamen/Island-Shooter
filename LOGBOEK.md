@@ -103,3 +103,23 @@
 - Map verbetert
 - Enemy health toegevoegd
 - UML afgemaakt
+
+# -- Donderdag 18 December
+- Gestart met minimap detection
+- Map uitgebreid
+- Default values van player aangepast
+- Enemy damage toegevoegd
+
+# -- Maandag 5 Januari
+- Player prefab geupdate
+- Guns toegevoegd aan test scene
+- Shooter script bugfix
+
+# -- Dinsdag 6 Januari
+- Shoter script bugfix
+- Begonnen aan camera movement minder jittery maken
+- Sensitivity geupdate
+- Boom collision gefixed
+- Minimap werkend gekregen
+- Death UI gefixed
+- Nieuwe pickup scripts gemaakt
