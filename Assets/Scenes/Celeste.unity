@@ -5541,8 +5541,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   lookRadius: 10
-  shootRange: 20
   health: 100
+  shooterData: {fileID: 11400000, guid: 1becd419d4bc8694f8110ba048e9b44d, type: 2}
+  firePoint: {fileID: 6173715606444201542}
 --- !u!114 &5387914965011369476
 MonoBehaviour:
   m_ObjectHideFlags: 0
