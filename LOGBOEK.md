@@ -123,3 +123,8 @@
 - Minimap werkend gekregen
 - Death UI gefixed
 - Nieuwe pickup scripts gemaakt
+
+# -- Woensdag 7 Januari
+- Enemy AR gegeven
+- Enemy Inverse Kinematics gemaakt
+- Enemy shooting script gemaakt en aan gewerkt
