@@ -4,9 +4,12 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 30f;
-    public float shootRange = 20f;
     public int health = 100;
 
+    public ShooterData shooterData;
+    public Transform firePoint;
+
+    private float nextFireTime = 0f;
 
     private Transform target;
     private NavMeshAgent agent;
@@ -40,6 +43,7 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetBool("IsCrouched", true);
             FaceTarget();
+            Shooting();
         }
         else
         {
@@ -53,6 +57,42 @@ public class EnemyController : MonoBehaviour
         // Set the animation based on local velocity
         animator.SetFloat(xVelHash, localVel.x);
         animator.SetFloat(yVelHash, localVel.z);
+    }
+
+    private void Shooting()
+    {
+        if (Time.time >=  nextFireTime)
+        {
+            Fire();
+            nextFireTime = Time.time + Random.Range(0.5f, 1.5f);
+        }
+    }
+
+    private void Fire()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(firePoint.position, target.position - firePoint.position, out hit, shooterData.range))
+        {
+            Debug.Log("Player hit");
+
+            // Here you can add logic to apply damage to the player or other objects
+        }
+
+        GameObject fire = Instantiate(
+            shooterData.fireEffect,
+            firePoint.position,
+            firePoint.rotation,
+            firePoint
+        );
+
+        GameObject hitFX = Instantiate(
+            shooterData.hitEffect,
+            hit.point,
+            Quaternion.LookRotation(hit.normal)
+        );
+
+        Destroy(fire, shooterData.effectLifetime);
+        Destroy(hitFX, shooterData.effectLifetime);
     }
 
     private void FaceTarget() // Face target when in stopping distance

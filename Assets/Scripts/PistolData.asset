@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: PistolData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
   range: 15
-  damage: 10
+  damage: 20
   ShootDelay: 0.3
   reloadTime: 3
   maxAmmo: 30
+  startReserveAmmo: 10
   clipSize: 10
   weaponIcon: {fileID: 21300000, guid: 31c4e0bb65fd72a42b31cb4fb04fe981, type: 3}
   fireEffect: {fileID: 7078021597972384588, guid: d1808050b5de351479da6237fd47ee52, type: 3}
