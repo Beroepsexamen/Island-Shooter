@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // of TMPro als je TextMeshPro gebruikt
+using UnityEngine.UI; 
 
 public class GunPickup : MonoBehaviour
 {

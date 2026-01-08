@@ -70,17 +70,17 @@ public class Shooter : MonoBehaviour
 
         currentGun.transform.localScale = currentGunData.gunScale;
 
-        UpdateAmmoUI();
+        ammo.GetClip(currentGunData);
 
         currentFirePoint = currentGun.transform.GetChild(0);
 
-        ammo.GetClip(currentGunData);
+        UpdateAmmoUI();
 
         if (weaponUI != null)
             weaponUI.UpdateIcon(currentGunData.weaponIcon);
     }
 
-    void UpdateAmmoUI()
+   public void UpdateAmmoUI()
     {
         if (ammo == null || ammoUI == null || currentGunData == null) return;
 

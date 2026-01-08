@@ -12,6 +12,7 @@ public class ShooterData : ScriptableObject
 
     [Header("Ammo")]
     public int maxAmmo = 120;     // totale reserve
+    public int startReserveAmmo = 20;// huidige reserve
     public int clipSize = 30;     // magazijn grootte
 
     [Header("UI")]

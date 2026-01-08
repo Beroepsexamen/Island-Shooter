@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
-    public ShooterData gunType;          // Voor welk wapen deze ammo is
-    public int ammoAmount = 30;          // Hoeveel kogels deze pickup geeft
-    public GameObject pickupTextUI;      // UI Text object dat "Press E" toont
+    public ShooterData gunType;
+    public int ammoAmount = 30;
+    public GameObject pickupTextUI;
 
     private bool canPickup = false;
     private Ammo ammo;
+    private Shooter shooter;
 
     private void Start()
     {
         if (pickupTextUI != null)
-            pickupTextUI.SetActive(false); // start onzichtbaar
+            pickupTextUI.SetActive(false);
     }
 
     private void Update()
@@ -21,7 +22,13 @@ public class AmmoPickup : MonoBehaviour
         {
             if (ammo != null && gunType != null)
             {
+                // ammo toevoegen
                 ammo.AddAmmo(gunType, ammoAmount);
+
+                // UI updaten
+                if (shooter != null)
+                    shooter.UpdateAmmoUI();
+
                 Destroy(gameObject);
             }
         }
@@ -29,16 +36,16 @@ public class AmmoPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Alleen de speler mag de ammo oppakken
         if (other.CompareTag("Player"))
         {
-            // Pak Ammo component van de speler
             ammo = other.GetComponent<Ammo>();
+            shooter = other.GetComponent<Shooter>();
+
             if (ammo != null)
             {
                 canPickup = true;
                 if (pickupTextUI != null)
-                    pickupTextUI.SetActive(true); // toon UI
+                    pickupTextUI.SetActive(true);
             }
         }
     }
@@ -49,8 +56,10 @@ public class AmmoPickup : MonoBehaviour
         {
             canPickup = false;
             ammo = null;
+            shooter = null;
+
             if (pickupTextUI != null)
-                pickupTextUI.SetActive(false); // verberg UI
+                pickupTextUI.SetActive(false);
         }
     }
 }

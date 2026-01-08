@@ -3,19 +3,16 @@ using System.Collections.Generic;
 
 public class Ammo : MonoBehaviour
 {
-    
     private Dictionary<ShooterData, int> ammoClips = new Dictionary<ShooterData, int>();
-    
     private Dictionary<ShooterData, int> ammoReserve = new Dictionary<ShooterData, int>();
 
-    
     public void GetClip(ShooterData gunData)
     {
         if (!ammoClips.ContainsKey(gunData))
             ammoClips[gunData] = gunData.clipSize;
 
         if (!ammoReserve.ContainsKey(gunData))
-            ammoReserve[gunData] = gunData.maxAmmo - ammoClips[gunData];
+            ammoReserve[gunData] = gunData.startReserveAmmo;
     }
 
     public int GetClipAmount(ShooterData gunData)
@@ -55,14 +52,8 @@ public class Ammo : MonoBehaviour
         ammoReserve[gunData] -= toReload;
     }
 
-   
     public void AddAmmo(ShooterData gunData, int amount)
     {
-        if (gunData == null) return;
-
-        if (!ammoClips.ContainsKey(gunData))
-            ammoClips[gunData] = 0;
-
         if (!ammoReserve.ContainsKey(gunData))
             ammoReserve[gunData] = 0;
 
