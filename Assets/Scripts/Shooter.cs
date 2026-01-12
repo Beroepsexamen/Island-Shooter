@@ -98,7 +98,7 @@ public class Shooter : MonoBehaviour
         UpdateAmmoUI();
     }
 
-    public void Shooting()
+   public void Shooting()
     {
         if (currentGunData == null || currentFirePoint == null)
             return;
