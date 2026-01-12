@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Shooter : MonoBehaviour
@@ -13,8 +12,9 @@ public class Shooter : MonoBehaviour
     private ShooterData currentGunData;
     private GameObject currentGun;
     private Transform currentFirePoint;
+    private AudioSource gunAudio;
 
-    private float nextFireTime = 0f;
+    private float nextFireTime;
 
     private Ammo ammo;
     public AmmoUI ammoUI;
@@ -70,10 +70,10 @@ public class Shooter : MonoBehaviour
 
         currentGun.transform.localScale = currentGunData.gunScale;
 
-        ammo.GetClip(currentGunData);
-
+        gunAudio = currentGun.GetComponent<AudioSource>();
         currentFirePoint = currentGun.transform.GetChild(0);
 
+        ammo.GetClip(currentGunData);
         UpdateAmmoUI();
 
         if (weaponUI != null)
@@ -92,8 +92,7 @@ public class Shooter : MonoBehaviour
 
     void Reload()
     {
-        if (currentGunData == null)
-            return;
+        if (currentGunData == null) return;
 
         ammo.Reload(currentGunData);
         UpdateAmmoUI();
@@ -112,30 +111,27 @@ public class Shooter : MonoBehaviour
 
         RaycastHit hit;
 
-        // Doe eerst de raycast
         if (!Physics.Raycast(
             fpsCam.transform.position,
             fpsCam.transform.forward,
             out hit,
             currentGunData.range))
         {
-            return; //  niks geraakt = geen kogel gebruiken
+            return;
         }
 
-        // Pas NU schieten
         nextFireTime = Time.time + currentGunData.ShootDelay;
 
         ammo.UseBullet(currentGunData);
         UpdateAmmoUI();
 
-        // Damage
+        if (gunAudio != null && currentGunData.shootSound != null)
+            gunAudio.PlayOneShot(currentGunData.shootSound);
+
         EnemyController enemy = hit.collider.GetComponent<EnemyController>();
         if (enemy != null)
-        {
             enemy.TakeDamage((int)currentGunData.damage);
-        }
 
-        // Muzzle flash
         GameObject fire = Instantiate(
             currentGunData.fireEffect,
             currentFirePoint.position,
@@ -143,7 +139,6 @@ public class Shooter : MonoBehaviour
             currentFirePoint
         );
 
-        // Hit effect
         GameObject hitFX = Instantiate(
             currentGunData.hitEffect,
             hit.point,
@@ -153,5 +148,4 @@ public class Shooter : MonoBehaviour
         Destroy(fire, currentGunData.effectLifetime);
         Destroy(hitFX, currentGunData.effectLifetime);
     }
-
 }

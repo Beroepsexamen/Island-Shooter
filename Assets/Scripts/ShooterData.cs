@@ -11,8 +11,8 @@ public class ShooterData : ScriptableObject
     public float reloadTime = 2f;
 
     [Header("Ammo")]
-    public int maxAmmo = 120;     // totale reserve
-    public int startReserveAmmo = 20;// huidige reserve
+    public int maxAmmo = 120;     
+    public int startReserveAmmo = 20;
     public int clipSize = 30;     // magazijn grootte
 
     [Header("UI")]
@@ -28,5 +28,8 @@ public class ShooterData : ScriptableObject
 
     [Header("Gun Transform")]
     public Vector3 gunScale = Vector3.one;  // Scale of the gun when held
+
+    [Header("Audio Clips")]
+    public AudioClip shootSound;
 
 }
