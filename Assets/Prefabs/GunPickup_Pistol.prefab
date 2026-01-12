@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunPickup
   gunData: {fileID: 11400000, guid: 0cb05611c67718941a299808bd0b0d3c, type: 2}
+  pickupTextUI: {fileID: 0}
 --- !u!1001 &1997798519678981021
 PrefabInstance:
   m_ObjectHideFlags: 0
