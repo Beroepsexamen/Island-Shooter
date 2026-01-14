@@ -128,3 +128,21 @@
 - Enemy AR gegeven
 - Enemy Inverse Kinematics gemaakt
 - Enemy shooting script gemaakt en aan gewerkt
+
+# -- Donderdag 8 Januari
+- Verder gewerkt aan de minimap
+- Fixed gun/ammo scripts
+
+# -- Vrijdag 9 Januari
+-- Verder gewerkt aan sound
+
+# -- Maandag 12 Januari
+-- Verder gewerkt met geluid/sound effects
+-- Planning gemaakt voor de week
+-- Verder gewerkt aan het eiland
+-- Nagedacht over achievements
+
+# -- Dinsdag 13 Januari
+-- Gekeken naar de voortgang van het project
+
+# -- Woensdag 14 Januari
