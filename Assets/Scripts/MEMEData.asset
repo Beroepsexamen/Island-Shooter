@@ -23,5 +23,6 @@ MonoBehaviour:
   fireEffect: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   hitEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   effectLifetime: 1
-  Gun: {fileID: 919132149155446097, guid: a4dd9a9590bbbb743a32c14e18236dab, type: 3}
+  Gun: {fileID: 5363716538136508816, guid: 5251b7a7de907fd40bc626a6902bc20d, type: 3}
   gunScale: {x: 1, y: 1, z: 1}
+  shootSound: {fileID: 0}

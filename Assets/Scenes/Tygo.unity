@@ -3232,7 +3232,7 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 8
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.8
@@ -7566,77 +7566,6 @@ Transform:
   - {fileID: 5110182389459476292}
   m_Father: {fileID: 6359287983078002310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2756984702251617242
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1074990233393912314, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_Name
-      value: GunPickup_Pistol
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 710.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.089
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 407.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057582892279438815, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7780954427936838280, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: gunData
-      value: 
-      objectReference: {fileID: 11400000, guid: 2efb182ce9270d14ab0cfc48e3062974, type: 2}
-    - target: {fileID: 7780954427936838280, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: pressEUI
-      value: 
-      objectReference: {fileID: 508532267}
-    - target: {fileID: 7780954427936838280, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-      propertyPath: pickupTextUI
-      value: 
-      objectReference: {fileID: 508532267}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 9024543670448544191, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 91a7b1d039453dd43b6cda41966082d8, type: 3}
 --- !u!4 &2778739050152540028
 Transform:
   m_ObjectHideFlags: 0
@@ -9388,6 +9317,75 @@ Transform:
   - {fileID: 5717453299921374331}
   m_Father: {fileID: 4203725416601385963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5034177224920826855
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1889248017281418169, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_Name
+      value: GunPickup_meme
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518950628282625030, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: pickupTextUI
+      value: 
+      objectReference: {fileID: 508532267}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 710.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.089
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 407.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663840847560520385, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650106447701391440, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650106447701391440, guid: d900e69b33d88844c893093f32c6d183, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d900e69b33d88844c893093f32c6d183, type: 3}
 --- !u!1 &5034787645776415356
 GameObject:
   m_ObjectHideFlags: 0
@@ -11877,7 +11875,7 @@ SceneRoots:
   - {fileID: 473216364}
   - {fileID: 191026696}
   - {fileID: 8880945670715234345}
-  - {fileID: 2756984702251617242}
+  - {fileID: 5034177224920826855}
   - {fileID: 3637566425953811542}
   - {fileID: 352566901254141791}
   - {fileID: 838527098}
