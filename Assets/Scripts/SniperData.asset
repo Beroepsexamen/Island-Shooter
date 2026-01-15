@@ -25,3 +25,4 @@ MonoBehaviour:
   effectLifetime: 1
   Gun: {fileID: 1818409643289234389, guid: e1e5d20457a076a49899e0d99d8acbd7, type: 3}
   gunScale: {x: 0.25, y: 0.25, z: 0.12}
+  shootSound: {fileID: 8300000, guid: 15346a45832f43b4d9a091c4a3f2cd65, type: 3}
