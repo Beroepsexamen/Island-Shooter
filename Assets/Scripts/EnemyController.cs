@@ -73,26 +73,35 @@ public class EnemyController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(firePoint.position, target.position - firePoint.position, out hit, shooterData.range))
         {
-            Debug.Log("Player hit");
+            if (hit.transform.CompareTag("Player"))
+            {
+                hit.transform.GetComponent<PlayerHealth>().TakeDamageP(1);
+            }
+            else
+            {
+                Debug.Log("Player hit");
+                Debug.Log(hit.transform.name);
+                Debug.Log("no Dam");
 
-            // Here you can add logic to apply damage to the player or other objects
+                // Here you can add logic to apply damage to the player or other objects
+            }
+
+            GameObject fire = Instantiate(
+                shooterData.fireEffect,
+                firePoint.position,
+                firePoint.rotation,
+                firePoint
+            );
+
+            GameObject hitFX = Instantiate(
+                shooterData.hitEffect,
+                hit.point,
+                Quaternion.LookRotation(hit.normal)
+            );
+
+            Destroy(fire, shooterData.effectLifetime);
+            Destroy(hitFX, shooterData.effectLifetime);
         }
-
-        GameObject fire = Instantiate(
-            shooterData.fireEffect,
-            firePoint.position,
-            firePoint.rotation,
-            firePoint
-        );
-
-        GameObject hitFX = Instantiate(
-            shooterData.hitEffect,
-            hit.point,
-            Quaternion.LookRotation(hit.normal)
-        );
-
-        Destroy(fire, shooterData.effectLifetime);
-        Destroy(hitFX, shooterData.effectLifetime);
     }
 
     private void FaceTarget() // Face target when in stopping distance
