@@ -17,11 +17,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(1);
+            TakeDamageP(1);
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamageP(int amount)
     {
         health -= amount;
 
