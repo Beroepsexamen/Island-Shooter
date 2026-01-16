@@ -28,8 +28,9 @@ public class AmmoPickup : MonoBehaviour
                 // UI updaten
                 if (shooter != null)
                     shooter.UpdateAmmoUI();
-
+                
                 Destroy(gameObject);
+                
             }
         }
     }
@@ -58,8 +59,10 @@ public class AmmoPickup : MonoBehaviour
             ammo = null;
             shooter = null;
 
-            if (pickupTextUI != null)
+            if (pickupTextUI != false)
                 pickupTextUI.SetActive(false);
         }
     }
+
+    
 }
