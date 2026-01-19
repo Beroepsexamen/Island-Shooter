@@ -73,19 +73,6 @@ public class EnemyController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(firePoint.position, target.position - firePoint.position, out hit, shooterData.range))
         {
-            if (hit.transform.CompareTag("Player"))
-            {
-                hit.transform.GetComponent<PlayerHealth>().TakeDamageP(1);
-            }
-            else
-            {
-                Debug.Log("Player hit");
-                Debug.Log(hit.transform.name);
-                Debug.Log("no Dam");
-
-                // Here you can add logic to apply damage to the player or other objects
-            }
-
             GameObject fire = Instantiate(
                 shooterData.fireEffect,
                 firePoint.position,
@@ -101,6 +88,17 @@ public class EnemyController : MonoBehaviour
 
             Destroy(fire, shooterData.effectLifetime);
             Destroy(hitFX, shooterData.effectLifetime);
+
+            if (hit.transform.CompareTag("Player"))
+            {
+                PlayerHealth.instance.TakeDamageP(1);
+            }
+            else
+            {
+                Debug.Log("Player hit");
+                Debug.Log(hit.transform.name);
+                Debug.Log("no Dam");
+            }
         }
     }
 

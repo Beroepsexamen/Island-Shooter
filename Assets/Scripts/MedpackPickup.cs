@@ -36,7 +36,7 @@ public class MedpackPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Pak PlayerHealth van GameManager
-            health = GameObject.Find("GameManager").GetComponent<PlayerHealth>();
+            health = PlayerHealth.instance;
             if (health != null)
             {
                 canPickup = true;

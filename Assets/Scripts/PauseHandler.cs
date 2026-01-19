@@ -5,7 +5,6 @@ using UnityEngine;
 public class PauseHandler : MonoBehaviour
 {
     [Header("Death Screen")]
-    public PlayerHealth playerHealth;
     public Canvas deathCanvas;
     public Animator playerAnimator;
     public PlayerCam playerCam;
@@ -25,7 +24,7 @@ public class PauseHandler : MonoBehaviour
 
     private void DeathUI()
     {
-        if (playerHealth.health <= 0 && !isDead) // Check if player is dead
+        if (PlayerHealth.instance.health <= 0 && !isDead) // Check if player is dead
         {
             StartCoroutine(Die());
         }
