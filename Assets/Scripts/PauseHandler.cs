@@ -9,13 +9,8 @@ public class PauseHandler : MonoBehaviour
     public Animator playerAnimator;
     public PlayerCam playerCam;
     public Canvas playerHUD;
-    private GameObject player;
-    public bool isDead = false;
 
-    private void Start()
-    {
-        player = PlayerManager.instance.player;
-    }
+    public bool isDead = false;
 
     private void Update()
     {
@@ -37,7 +32,7 @@ public class PauseHandler : MonoBehaviour
             deathCanvas.enabled = true;
             playerCam.enabled = false;
             if (playerHUD != null) playerHUD.enabled = false;
-            player.SetActive(false);
+            PlayerManager.instance.player.SetActive(false);
         }
     }
 

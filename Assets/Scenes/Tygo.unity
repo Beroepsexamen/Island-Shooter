@@ -1478,7 +1478,7 @@ PrefabInstance:
     - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: playerHealth
       value: 
-      objectReference: {fileID: 6149357582663936791}
+      objectReference: {fileID: 0}
     - target: {fileID: 1601578927556543192, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: playerAnimator
       value: 
@@ -1496,12 +1496,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2028333165}
     - target: {fileID: 5962909542977136128, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
+      propertyPath: health
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962909542977136128, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: hearts
       value: 
       objectReference: {fileID: 75901393}
     - target: {fileID: 5962909542977136128, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8209768415251609293, guid: c99fa5f167696484bbfa9848883ae718, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7847,7 +7851,6 @@ GameObject:
   - component: {fileID: 5249059576746221492}
   - component: {fileID: 6149357582663936790}
   - component: {fileID: 1571695510790484870}
-  - component: {fileID: 6149357582663936791}
   m_Layer: 0
   m_Name: PlayerV4
   m_TagString: Player
@@ -10405,21 +10408,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &6149357582663936791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2645724112826089936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 477f2cb4d298ec9428d9ee461669a5a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 7
-  health: 7
-  hearts: {fileID: 75901393}
 --- !u!4 &6167480522128847295
 Transform:
   m_ObjectHideFlags: 0

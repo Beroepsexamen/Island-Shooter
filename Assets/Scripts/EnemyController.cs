@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 30f;
+    public float lookRadius = 25f;
     public int health = 100;
 
     public ShooterData shooterData;
