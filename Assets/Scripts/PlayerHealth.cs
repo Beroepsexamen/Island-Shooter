@@ -2,6 +2,20 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    #region Singleton
+
+    public static PlayerHealth instance;
+    
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    #endregion
+
     public int maxHealth = 7;
     public int health;
 

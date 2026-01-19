@@ -134,15 +134,28 @@
 - Fixed gun/ammo scripts
 
 # -- Vrijdag 9 Januari
--- Verder gewerkt aan sound
+- Verder gewerkt aan sound
 
 # -- Maandag 12 Januari
--- Verder gewerkt met geluid/sound effects
--- Planning gemaakt voor de week
--- Verder gewerkt aan het eiland
--- Nagedacht over achievements
+- Verder gewerkt met geluid/sound effects
+- Planning gemaakt voor de week
+- Verder gewerkt aan het eiland
+- Nagedacht over achievements
 
 # -- Dinsdag 13 Januari
--- Gekeken naar de voortgang van het project
+- Gekeken naar de voortgang van het project
 
 # -- Woensdag 14 Januari
+- Sound effects gefixed
+- Colliders toegevoegd aan map onderdelen
+
+# -- Donderdag 15 Januari
+- Meer colliders toegevoegd
+- Gras texture toegevoegd
+- Achievement script gemaakt
+- Enemies gefixed
+
+# -- Vrijdag 16 Januari
+- Map updates
+- Hostage en animaties toegevoegd
+- Hostage movement gemaakt

@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public ShooterData shooterData;
     public Transform firePoint;
 
-    private float nextFireTime = 0f;
+    private float nextFireTime;
 
     private Transform target;
     private NavMeshAgent agent;
@@ -64,28 +64,17 @@ public class EnemyController : MonoBehaviour
         if (Time.time >=  nextFireTime)
         {
             Fire();
-            nextFireTime = Time.time + Random.Range(0.5f, 1.5f);
+            nextFireTime = Time.time + 1f / Random.Range(1f, 2f);
         }
     }
 
     private void Fire()
     {
+        Debug.Log("Firing");
+
         RaycastHit hit;
         if (Physics.Raycast(firePoint.position, target.position - firePoint.position, out hit, shooterData.range))
         {
-            if (hit.transform.CompareTag("Player"))
-            {
-                hit.transform.GetComponent<PlayerHealth>().TakeDamageP(1);
-            }
-            else
-            {
-                Debug.Log("Player hit");
-                Debug.Log(hit.transform.name);
-                Debug.Log("no Dam");
-
-                // Here you can add logic to apply damage to the player or other objects
-            }
-
             GameObject fire = Instantiate(
                 shooterData.fireEffect,
                 firePoint.position,
@@ -101,6 +90,17 @@ public class EnemyController : MonoBehaviour
 
             Destroy(fire, shooterData.effectLifetime);
             Destroy(hitFX, shooterData.effectLifetime);
+
+            if (hit.transform.CompareTag("Player"))
+            {
+                PlayerHealth.instance.TakeDamageP(1);
+            }
+            else
+            {
+                Debug.Log("Player hit");
+                Debug.Log(hit.transform.name);
+                Debug.Log("no Dam");
+            }
         }
     }
 
