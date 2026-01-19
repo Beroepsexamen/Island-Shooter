@@ -61,11 +61,11 @@ public class EnemyController : MonoBehaviour
 
     private void Shooting()
     {
-        if (Time.time >=  nextFireTime)
-        {
-            Fire();
-            nextFireTime = Time.time + 1f / Random.Range(1f, 2f);
-        }
+        if (Time.time < nextFireTime)
+            return;
+            
+        Fire();
+        nextFireTime = Time.time + Random.Range(0.5f, 1.5f);
     }
 
     private void Fire()
