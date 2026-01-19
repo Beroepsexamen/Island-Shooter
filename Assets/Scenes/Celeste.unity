@@ -449,7 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb37e548ad9e4584ab380a2261e2d007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathScript
-  playerHealth: {fileID: 6380766593387170247}
 --- !u!1 &1513573247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,7 +2854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d746e3a2a0722494a8dbfc676aca146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseHandler
-  playerHealth: {fileID: 6380766593387170247}
   deathCanvas: {fileID: 8937336516846033465}
   playerAnimator: {fileID: 1733705586398176623}
   playerCam: {fileID: 1728992314946784540}
@@ -11381,7 +11379,6 @@ SceneRoots:
   - {fileID: 8909104307815504138}
   - {fileID: 276108981}
   - {fileID: 855736714471782883}
-  - {fileID: 243675475}
   - {fileID: 772948430}
   - {fileID: 1513573250}
   - {fileID: 4275326037811193384}
@@ -11389,3 +11386,4 @@ SceneRoots:
   - {fileID: 5034423458387296408}
   - {fileID: 7881666327158442643}
   - {fileID: 5569514677430236488}
+  - {fileID: 243675475}

@@ -31,12 +31,13 @@ public class PauseHandler : MonoBehaviour
 
         if (isDead) // If player is dead show death screen
         {
-            deathCanvas.enabled = true;
-            playerCam.enabled = false;
-            playerHUD.enabled = false;
-            player.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            
+            deathCanvas.enabled = true;
+            playerCam.enabled = false;
+            if (playerHUD != null) playerHUD.enabled = false;
+            player.SetActive(false);
         }
     }
 
