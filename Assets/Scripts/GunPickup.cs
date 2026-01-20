@@ -22,6 +22,7 @@ public class GunPickup : MonoBehaviour
             if (shooter != null && gunData != null)
             {
                 shooter.AddGun(gunData);
+                pickupTextUI.SetActive(false);
                 Destroy(gameObject);
             }
         }
