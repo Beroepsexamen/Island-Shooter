@@ -31,7 +31,7 @@ public class PlayerCam : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -60f, 60f);
 
         // Rotate camera based on mouse movement
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(xRotation, yRotation, 0f), 0.5f);
         
         // Rotate player orientation based on mouse movement
         playerObj.rotation = Quaternion.Euler(0f, yRotation, 0f);
