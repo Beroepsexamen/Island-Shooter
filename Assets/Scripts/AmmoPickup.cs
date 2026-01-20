@@ -28,7 +28,7 @@ public class AmmoPickup : MonoBehaviour
                 // UI updaten
                 if (shooter != null)
                     shooter.UpdateAmmoUI();
-                
+                pickupTextUI.SetActive(false);
                 Destroy(gameObject);
                 
             }
