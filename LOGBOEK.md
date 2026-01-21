@@ -172,3 +172,8 @@
 - Map veranderd
 - Pickup script gefixed
 - Achievements toegevoegd
+
+# -- Woensdag 21 Januari
+- Enemy death animatie toegevoegd
+- Map veranderingen
+- Bezig met enemy gun drop
