@@ -146,7 +146,7 @@ public class EnemyController : MonoBehaviour
 
         if (roll <= dropRatePercent)
         {
-            GameObject gunDrop = Instantiate(
+            Instantiate(
                 gunPickup,
                 transform.position + Vector3.up,
                 Quaternion.identity
