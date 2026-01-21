@@ -5,8 +5,10 @@ public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 15f;
     public int health = 100;
+    public int dropRatePercent = 10;
 
     public ShooterData shooterData;
+    public GameObject gunPickup;
     public Transform firePoint;
 
     private float nextFireTime;
@@ -138,5 +140,17 @@ public class EnemyController : MonoBehaviour
         isDead = true;
         animator.SetBool("IsDead", true);
         agent.isStopped = true;
+
+        // Drop item based on drop rate
+        int roll = Random.Range(1, 101);
+
+        if (roll <= dropRatePercent)
+        {
+            GameObject gunDrop = Instantiate(
+                gunPickup,
+                transform.position + Vector3.up,
+                Quaternion.identity
+            );
+        }
     }
 }
