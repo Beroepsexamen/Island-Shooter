@@ -1,7 +1,5 @@
 using UnityEngine;
 
-using UnityEngine;
-
 public class SecretPickup : MonoBehaviour
 {
     public string achievementName;   // bv: "Secret1"
