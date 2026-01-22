@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SecretPickup : MonoBehaviour
 {
+
+
     public string achievementName;   // bv: "Secret1"
     public GameObject pickupTextUI;   // "Press E" UI
 
