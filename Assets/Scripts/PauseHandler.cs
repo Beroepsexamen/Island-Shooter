@@ -9,6 +9,7 @@ public class PauseHandler : MonoBehaviour
     public Animator playerAnimator;
     public PlayerCam playerCam;
     public Canvas playerHUD;
+    public Canvas Pausescreen;
 
     public bool isDead = false;
 
@@ -34,6 +35,13 @@ public class PauseHandler : MonoBehaviour
             if (playerHUD != null) playerHUD.enabled = false;
             PlayerManager.instance.player.SetActive(false);
         }
+    }
+
+    private void PausesUI()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        Pausescreen.enabled = true;
+        
     }
 
     private IEnumerator Die()
