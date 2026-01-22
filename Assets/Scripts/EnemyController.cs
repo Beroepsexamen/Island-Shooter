@@ -3,10 +3,12 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 25f;
+    public float lookRadius = 15f;
     public int health = 100;
+    public int dropRatePercent = 10;
 
     public ShooterData shooterData;
+    public GameObject gunPickup;
     public Transform firePoint;
 
     private float nextFireTime;
@@ -17,6 +19,8 @@ public class EnemyController : MonoBehaviour
 
     private int xVelHash;
     private int yVelHash;
+
+    private bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -32,11 +36,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (isDead) return;
+        
         // Get the distance from agent to target
         float distance = Vector3.Distance(target.position, transform.position);
 
         // Set destination if within look radius
         if (distance <= lookRadius) agent.SetDestination(target.position);
+        if (distance > lookRadius) agent.ResetPath();
 
         // Makes the enemy crouch when close to the player
         if (distance <= agent.stoppingDistance)
@@ -130,6 +137,20 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        isDead = true;
+        animator.SetBool("IsDead", true);
+        agent.isStopped = true;
+
+        // Drop item based on drop rate
+        int roll = Random.Range(1, 101);
+
+        if (roll <= dropRatePercent)
+        {
+            Instantiate(
+                gunPickup,
+                transform.position + Vector3.up,
+                Quaternion.identity
+            );
+        }
     }
 }

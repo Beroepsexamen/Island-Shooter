@@ -159,3 +159,21 @@
 - Map updates
 - Hostage en animaties toegevoegd
 - Hostage movement gemaakt
+
+# -- Mondag 19 Januari
+- PlayerHealth herschreven
+- PauseHandler veranderd
+- Barriers toegevoegd aan map
+- Tygo's scene veranderd
+- Enemy schiet interval gefixed
+
+# -- Dinsdag 20 Januari
+- Nieuwe player animatie geïmporteerd
+- Map veranderd
+- Pickup script gefixed
+- Achievements toegevoegd
+
+# -- Woensdag 21 Januari
+- Enemy death animatie toegevoegd
+- Map veranderingen
+- Bezig met enemy gun drop

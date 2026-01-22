@@ -25,6 +25,7 @@ public class MedpackPickup : MonoBehaviour
                     health.health = health.maxHealth;
 
                 health.hearts.UpdateHP(health.health);
+                pickupTextUI.SetActive(false);
                 Destroy(gameObject);
             }
         }
