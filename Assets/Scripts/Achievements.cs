@@ -14,6 +14,8 @@ public class Achievements : MonoBehaviour
   public bool RedDeGijzelaars;
   public bool VindAlleGuns;
 
+    public Achievementpopup popup;
+
     public void UnlockAchievement(string achievementName)
     {
         switch (achievementName)
@@ -23,7 +25,6 @@ public class Achievements : MonoBehaviour
                 break;
 
             case "Secret2":
-
                 TryUnlock(ref Secret2, "Secret 2");
                 break;
 
@@ -48,15 +49,15 @@ public class Achievements : MonoBehaviour
                 break;
 
             case "EnemyKills15":
-                TryUnlock(ref Secret1, "EnemyKills15");
+                TryUnlock(ref EnemyKills15, "EnemyKills15");
                 break;
 
             case "RedDeGijzelaars":
-                TryUnlock(ref Secret1, "All Secrets");
+                TryUnlock(ref RedDeGijzelaars, "RedDeGijzelaars");
                 break;
 
             case "VindAlleGuns":
-                TryUnlock(ref Secret1, "All Secrets");
+                TryUnlock(ref VindAlleGuns, "VindAlleGuns");
                 break;
         }
     }
@@ -68,6 +69,7 @@ public class Achievements : MonoBehaviour
         achievement = true;
         Debug.Log("Achievement unlocked: " + displayName);
 
-
+        if (popup != null)
+            popup.ShowAchievement("Achievement Unlocked!\n" + displayName);
     }
 };
