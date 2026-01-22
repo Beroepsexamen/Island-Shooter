@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +11,8 @@ public class EnemyController : MonoBehaviour
     public ShooterData shooterData;
     public GameObject gunPickup;
     public Transform firePoint;
+    public AudioSource gunAudio;
+    public GameObject gunPickupUI;
 
     private float nextFireTime;
 
@@ -82,6 +85,7 @@ public class EnemyController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(firePoint.position, target.position - firePoint.position, out hit, shooterData.range))
         {
+
             GameObject fire = Instantiate(
                 shooterData.fireEffect,
                 firePoint.position,
@@ -131,26 +135,30 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    void Die()
+    IEnumerator Die()
     {
         isDead = true;
-        animator.SetBool("IsDead", true);
         agent.isStopped = true;
+        animator.SetBool("IsDead", true);
+        yield return new WaitForSeconds(2f);
+        GetComponent<CapsuleCollider>().enabled = false;
 
         // Drop item based on drop rate
         int roll = Random.Range(1, 101);
 
         if (roll <= dropRatePercent)
         {
-            Instantiate(
+            GameObject pickupGun = Instantiate(
                 gunPickup,
                 transform.position + Vector3.up,
                 Quaternion.identity
             );
+
+            pickupGun.GetComponent<GunPickup>().pickupTextUI = gunPickupUI;
         }
     }
 }
