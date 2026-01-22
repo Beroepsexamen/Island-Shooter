@@ -85,6 +85,7 @@ public class EnemyController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(firePoint.position, target.position - firePoint.position, out hit, shooterData.range))
         {
+            gunAudio.PlayOneShot(shooterData.shootSound);
 
             GameObject fire = Instantiate(
                 shooterData.fireEffect,
