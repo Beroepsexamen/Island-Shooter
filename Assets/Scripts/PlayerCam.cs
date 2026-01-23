@@ -29,9 +29,12 @@ public class PlayerCam : MonoBehaviour
 
         // Limit vertical look angle
         xRotation = Mathf.Clamp(xRotation, -60f, 60f);
+    }
 
+    private void LateUpdate()
+    {
         // Rotate camera based on mouse movement
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(xRotation, yRotation, 0f), 0.5f);
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
         
         // Rotate player orientation based on mouse movement
         playerObj.rotation = Quaternion.Euler(0f, yRotation, 0f);
