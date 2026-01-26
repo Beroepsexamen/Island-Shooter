@@ -2898,6 +2898,63 @@ Transform:
   - {fileID: 698460206}
   m_Father: {fileID: 264833082}
   m_LocalEulerAnglesHint: {x: -84.996, y: -1.477, z: 96.245}
+--- !u!1001 &969129425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 712.814
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.131
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 402.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172620869034343528, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741784006428200061, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
+      propertyPath: m_Name
+      value: RubberDuck_Model01_C3_001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 350612fbc8b6a654fbb27390eec641d6, type: 3}
 --- !u!1 &991322613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,8 +3687,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   lookRadius: 10
   health: 100
+  dropRatePercent: 10
   shooterData: {fileID: 11400000, guid: 1becd419d4bc8694f8110ba048e9b44d, type: 2}
+  gunPickup: {fileID: 0}
   firePoint: {fileID: 1653788683}
+  gunAudio: {fileID: 0}
+  gunPickupUI: {fileID: 0}
 --- !u!136 &1300013225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3864,6 +3925,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347306707}
   m_CullTransparentMesh: 1
+--- !u!1001 &1370617222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 17.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 712.7411
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.9981785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 401.69427
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709766038613781649, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775343476657490613, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
+      propertyPath: m_Name
+      value: RubberDuck_Model01_C1_001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b01ad47e35e7db48b79d17adaf32c1f, type: 3}
 --- !u!1 &1376697106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,6 +4883,7 @@ MonoBehaviour:
   EnemyKills15: 0
   RedDeGijzelaars: 0
   VindAlleGuns: 0
+  popup: {fileID: 0}
 --- !u!4 &1557107951
 Transform:
   m_ObjectHideFlags: 0
@@ -8536,8 +8667,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   lookRadius: 30
   health: 100
+  dropRatePercent: 10
   shooterData: {fileID: 11400000, guid: 1becd419d4bc8694f8110ba048e9b44d, type: 2}
+  gunPickup: {fileID: 0}
   firePoint: {fileID: 0}
+  gunAudio: {fileID: 0}
+  gunPickupUI: {fileID: 0}
 --- !u!1 &3254136232704903501
 GameObject:
   m_ObjectHideFlags: 0
@@ -12739,3 +12874,5 @@ SceneRoots:
   - {fileID: 8154849914308224289}
   - {fileID: 88727525}
   - {fileID: 1557107951}
+  - {fileID: 1370617222}
+  - {fileID: 969129425}
