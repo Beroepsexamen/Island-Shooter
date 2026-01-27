@@ -3614,7 +3614,6 @@ GameObject:
   - component: {fileID: 8937336516846033465}
   - component: {fileID: 1859155148823272227}
   - component: {fileID: 7371352734976952826}
-  - component: {fileID: 3533983196150083147}
   m_Layer: 5
   m_Name: Death Canvas
   m_TagString: Untagged
@@ -7008,18 +7007,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9053841113683678356}
   m_CullTransparentMesh: 1
---- !u!114 &3533983196150083147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794038322654934185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6c901aefc11b3345bddc63995dca232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathScreenButtons
 --- !u!222 &3534127581426008441
 CanvasRenderer:
   m_ObjectHideFlags: 0

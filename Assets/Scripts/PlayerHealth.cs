@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Hearts hearts;
     
-    private void Start()
+    private void Start() // Initialize health and update hearts display
     {
         health = maxHealth;
         hearts.UpdateHP(health);
@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamageP(int amount)
+    public void TakeDamageP(int amount) // Reduce health and update hearts display
     {
         health -= amount;
 

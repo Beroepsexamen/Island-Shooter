@@ -54,6 +54,7 @@ public class PauseHandler : MonoBehaviour
             if (playerHUD != null) playerHUD.enabled = false;
             Time.timeScale = 0f; // Freeze game
         }
+        
         else if (!isPaused && !isDead) // Hide pause screen when game is unpaused
         {
             Cursor.lockState = CursorLockMode.Locked;
