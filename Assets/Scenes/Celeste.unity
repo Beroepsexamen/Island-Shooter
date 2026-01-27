@@ -2085,7 +2085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 288.8, y: -92.4}
+  m_AnchoredPosition: {x: 288.80005, y: -92.3999}
   m_SizeDelta: {x: 580.233, y: 189.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592587497
@@ -2160,7 +2160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 157.68378, y: -63.660034}
+  m_AnchoredPosition: {x: 157.68384, y: -63.660156}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750305444
@@ -4642,7 +4642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ceeeef3bf8612468daacf2ae6c1ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  lookRadius: 20
+  lookRadius: 25
   health: 100
   dropRatePercent: 10
   shooterData: {fileID: 11400000, guid: 1becd419d4bc8694f8110ba048e9b44d, type: 2}
