@@ -15,7 +15,7 @@ public class HostageController : MonoBehaviour
 
     private bool followingPlayer = false;
 
-    private void Start()
+    private void Start() // Initialise components
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -31,7 +31,7 @@ public class HostageController : MonoBehaviour
 
         if (distance <= lookRadius) followingPlayer = true;
 
-        if (followingPlayer)
+        if (followingPlayer) // Follow player when within look radius
         {
             if (distance <= followRadius) agent.SetDestination(target.position);
             if (distance > followRadius) agent.ResetPath();
