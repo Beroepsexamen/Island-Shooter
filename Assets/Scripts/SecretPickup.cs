@@ -44,14 +44,14 @@ public class SecretPickup : MonoBehaviour
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        canPickup = false;
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            canPickup = false;
 
-    //        if (pickupTextUI != null)
-    //            //pickupTextUI.SetActive(false);
-    //    }
-    //}
+            if (pickupTextUI != null)
+                pickupTextUI.SetActive(false);
+        }
+    }
 }
