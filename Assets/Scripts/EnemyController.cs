@@ -134,7 +134,7 @@ public class EnemyController : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             StartCoroutine(Die());
         }
@@ -143,6 +143,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator Die()
     {
         isDead = true;
+        Enemycount.instance.EnemyKilled();
         agent.isStopped = true;
         animator.SetBool("IsDead", true);
         yield return new WaitForSeconds(2f);
