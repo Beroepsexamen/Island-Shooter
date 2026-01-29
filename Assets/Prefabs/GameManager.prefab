@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8209768415251609293}
-  - component: {fileID: 6796937272650779782}
   - component: {fileID: 1601578927556543192}
   - component: {fileID: 5962909542977136128}
   - component: {fileID: 2957824822204829050}
   - component: {fileID: 341435101639330656}
   - component: {fileID: 3718719049451234282}
   - component: {fileID: 3926641437108577009}
+  - component: {fileID: 2435404112179292567}
+  - component: {fileID: 6720802827816558741}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -38,18 +39,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6796937272650779782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8371812249464679938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6c901aefc11b3345bddc63995dca232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathScreenButtons
 --- !u!114 &1601578927556543192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,11 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d746e3a2a0722494a8dbfc676aca146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseHandler
-  playerHealth: {fileID: 5962909542977136128}
   deathCanvas: {fileID: 0}
   playerAnimator: {fileID: 0}
   playerCam: {fileID: 0}
+  playerHUD: {fileID: 0}
+  pauseScreen: {fileID: 0}
   isDead: 0
+  isPaused: 0
 --- !u!114 &5962909542977136128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 7
-  health: 0
+  health: 7
   hearts: {fileID: 341435101639330656}
 --- !u!114 &2957824822204829050
 MonoBehaviour:
@@ -142,3 +133,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponsUIscript
   iconImage: {fileID: 0}
+--- !u!114 &2435404112179292567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371812249464679938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73e961fb9e7cba408342c17a6641fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Achievements
+  Secret1: 0
+  Secret2: 0
+  Secret3: 0
+  Secret4: 0
+  AllSecrets: 0
+  EnemyKills5: 0
+  EnemyKills10: 0
+  EnemyKills15: 0
+  RedDeGijzelaars: 0
+  VindAlleGuns: 0
+  popup: {fileID: 0}
+--- !u!114 &6720802827816558741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371812249464679938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b4a5b5773a7424c95190d2810a41e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Achievementpopup
+  achievementText: {fileID: 0}
+  showTime: 3
