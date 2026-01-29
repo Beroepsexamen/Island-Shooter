@@ -41,6 +41,8 @@ public class Shooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) EquipGun(2);
         if (Input.GetKeyDown(KeyCode.Alpha4)) EquipGun(3);
         if (Input.GetKeyDown(KeyCode.Alpha9)) EquipGun(4);
+
+        if (unlockedGuns.Count >= 4) Achievements.Instance.UnlockAchievement("VindAlleGuns");
     }
 
     public void AddGun(ShooterData newGun)
