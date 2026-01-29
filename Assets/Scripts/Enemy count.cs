@@ -12,6 +12,7 @@ public class Enemycount : MonoBehaviour
 
     private void Start()
     {
+        
         instance = this;
         enemyCount = enemyParent.transform.childCount;
     }
