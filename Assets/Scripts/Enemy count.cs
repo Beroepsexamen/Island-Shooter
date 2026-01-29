@@ -3,30 +3,24 @@ using UnityEngine;
 using TMPro;
 public class Enemycount : MonoBehaviour
 {
-    public static Enemycount instance;
-
-    [SerializeField] private GameObject enemyParent;
-
-    public TMP_Text Gijzelnemertext;
-    public int enemyCount;
+  public TMP_Text Gijzelnemertext;
+    private int killCount = 0;
 
     private void Start()
     {
-        
-        instance = this;
-        enemyCount = enemyParent.transform.childCount;
         UpdateUI();
     }
 
     public void EnemyKilled() 
     {
-        enemyCount--;
+        killCount++;
         UpdateUI();
     }
 
     void UpdateUI()
     {
-        Gijzelnemertext.text = "" + enemyCount;
+        Gijzelnemertext.text = "" + killCount;
+
     }
 }
         

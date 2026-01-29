@@ -20,8 +20,7 @@ public class PlayerHealth : MonoBehaviour
     public int health;
 
     public Hearts hearts;
-    public AudioSource HurtP;
-
+    
     private void Start() // Initialize health and update hearts display
     {
         health = maxHealth;
@@ -33,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamageP(1);
-            
         }
     }
 
@@ -42,7 +40,5 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
 
         hearts.UpdateHP(health);
-
-        HurtP.PlayOneShot(HurtP.clip);
     }
 }

@@ -18,17 +18,21 @@ public class PlayerCam : MonoBehaviour
         Cursor.visible = false; // Hide cursor
     }
 
+    // Update is called once per frame
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * SensX * 0.025f;
-        float mouseY = Input.GetAxis("Mouse Y") * SensY * 0.025f;
+        float mouseX = Input.GetAxis("Mouse X") * SensX * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * SensY * Time.deltaTime;
 
         yRotation += mouseX;
         xRotation -= mouseY;
 
         // Limit vertical look angle
         xRotation = Mathf.Clamp(xRotation, -60f, 60f);
+    }
 
+    private void LateUpdate()
+    {
         // Rotate camera based on mouse movement
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
         

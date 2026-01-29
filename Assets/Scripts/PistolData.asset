@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 20
   ShootDelay: 0.3
   reloadTime: 3
-  maxAmmo: 50
+  maxAmmo: 30
   startReserveAmmo: 10
   clipSize: 10
   weaponIcon: {fileID: 21300000, guid: 31c4e0bb65fd72a42b31cb4fb04fe981, type: 3}
