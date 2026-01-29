@@ -13,7 +13,6 @@ public class Shooter : MonoBehaviour
     private GameObject currentGun;
     private Transform currentFirePoint;
     private AudioSource gunAudio;
-    
 
     private float nextFireTime;
 

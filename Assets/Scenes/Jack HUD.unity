@@ -1276,9 +1276,8 @@ MonoBehaviour:
   playerAnimator: {fileID: 0}
   playerCam: {fileID: 0}
   playerHUD: {fileID: 0}
-  pauseScreen: {fileID: 0}
+  Pausescreen: {fileID: 0}
   isDead: 0
-  isPaused: 0
 --- !u!4 &303588996
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,7 +2067,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -3301,9 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181fd0840ea6db94881f3e2120dfe60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemycount
-  enemyParent: {fileID: 0}
   Gijzelnemertext: {fileID: 206389675}
-  enemyCount: 0
 --- !u!1 &1189728189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3743,7 +3740,6 @@ MonoBehaviour:
   maxHealth: 7
   health: 0
   hearts: {fileID: 0}
-  HurtP: {fileID: 0}
 --- !u!4 &1417447334
 Transform:
   m_ObjectHideFlags: 0
