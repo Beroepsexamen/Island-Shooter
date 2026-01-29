@@ -14,10 +14,6 @@ public class Enemycount : MonoBehaviour
     {
         instance = this;
         enemyCount = enemyParent.transform.childCount;
-    }
-
-    private void Awake()
-    {
         UpdateUI();
     }
 
