@@ -37,18 +37,22 @@ public class Achievements : MonoBehaviour
         {
             case "Secret1":
                 TryUnlock(ref Secret1, "Secret 1");
+                CheckAllSecrets();
                 break;
 
             case "Secret2":
                 TryUnlock(ref Secret2, "Secret 2");
+                CheckAllSecrets();
                 break;
 
             case "Secret3":
                 TryUnlock(ref Secret3, "Secret 3");
+                CheckAllSecrets();
                 break;
 
             case "Secret4":
                 TryUnlock(ref Secret4, "Secret 4");
+                CheckAllSecrets();
                 break;
 
             case "AllSecrets":
@@ -76,6 +80,17 @@ public class Achievements : MonoBehaviour
                 break;
         }
     }
+
+    void CheckAllSecrets()
+    {
+        if (AllSecrets) return;
+
+        if (Secret1 && Secret2 && Secret3 && Secret4)
+        {
+            TryUnlock(ref AllSecrets, "All Secrets");
+        }
+    }
+
 
     void TryUnlock(ref bool achievement, string displayName)
     {
