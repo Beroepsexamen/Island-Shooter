@@ -8,23 +8,20 @@ public class SecretPickup : MonoBehaviour
     public GameObject pickupTextUI;   // "Press E" UI
 
     private bool canPickup = false;
-    private Achievements achievements;
 
     private void Start()
     {
         if (pickupTextUI != null)
             pickupTextUI.SetActive(false);
-
-        achievements = Object.FindFirstObjectByType<Achievements>();
     }
 
     private void Update()
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E))
         {
-            if (achievements != null)
+            if (Achievements.Instance != null)
             {
-                achievements.UnlockAchievement(achievementName);
+                Achievements.Instance.UnlockAchievement(achievementName);
                 pickupTextUI.SetActive(false);
                 Destroy(gameObject);
             }

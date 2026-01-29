@@ -23,6 +23,11 @@ public class HostageCollection : MonoBehaviour
         {
             SceneManager.LoadScene("Victory");
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene("Victory");
+        }
     } 
 
     void OnTriggerEnter(Collider other)

@@ -3761,6 +3761,7 @@ GameObject:
   - component: {fileID: 1646735061}
   - component: {fileID: 1646735060}
   - component: {fileID: 1646735059}
+  - component: {fileID: 1646735063}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3851,6 +3852,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1646735063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646735058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1870176439d144eb097f47b882e3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictoryScreenScript
+  achievementToggles:
+  - {fileID: 1543088386}
+  - {fileID: 1625715997}
+  - {fileID: 510616012}
+  - {fileID: 846395019}
+  - {fileID: 463888226}
+  - {fileID: 729362887}
+  - {fileID: 2015428966}
+  - {fileID: 1997081071}
+  - {fileID: 806113659}
+  - {fileID: 2087697008}
 --- !u!1 &1782817608
 GameObject:
   m_ObjectHideFlags: 0
