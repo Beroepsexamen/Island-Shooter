@@ -4,20 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class Titlescreenscript : MonoBehaviour
 {
+    public Canvas TitleScreen;
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    public void QuitGame()
+    public void QuitGame() // Quit game application
     {
-        
-#if UNITY_EDITOR
-        // Stop play mode when testing inside the Editor
-        EditorApplication.isPlaying = false;
-#else
-        // Quit the application in a built player
         Application.Quit();
-#endif
     }
 }
