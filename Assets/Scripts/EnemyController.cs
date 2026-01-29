@@ -106,6 +106,9 @@ public class EnemyController : MonoBehaviour
             if (hit.transform.CompareTag("Player"))
             {
                 PlayerHealth.instance.TakeDamageP(1);
+                
+                    
+                
             }
             else
             {
