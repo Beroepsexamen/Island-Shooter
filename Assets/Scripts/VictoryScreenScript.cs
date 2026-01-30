@@ -9,20 +9,20 @@ public class VictoryScreenScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (Achievements.Instance != null)
+        if (Achievements.instance != null)
         {
-            Achievements.Instance.UnlockAchievement("RedDeGijzelaars");
+            Achievements.instance.UnlockAchievement("RedDeGijzelaars");
 
-            achievementToggles[0].isOn = Achievements.Instance.Secret1;
-            achievementToggles[1].isOn = Achievements.Instance.Secret2;
-            achievementToggles[2].isOn = Achievements.Instance.Secret3;
-            achievementToggles[3].isOn = Achievements.Instance.Secret4;
-            achievementToggles[4].isOn = Achievements.Instance.EnemyKills5;
-            achievementToggles[5].isOn = Achievements.Instance.EnemyKills10;
-            achievementToggles[6].isOn = Achievements.Instance.EnemyKills15;
-            achievementToggles[7].isOn = Achievements.Instance.RedDeGijzelaars;
-            achievementToggles[8].isOn = Achievements.Instance.VindAlleGuns;
-            achievementToggles[9].isOn = Achievements.Instance.AllSecrets;
+            achievementToggles[0].isOn = Achievements.instance.secret1;
+            achievementToggles[1].isOn = Achievements.instance.secret2;
+            achievementToggles[2].isOn = Achievements.instance.secret3;
+            achievementToggles[3].isOn = Achievements.instance.secret4;
+            achievementToggles[4].isOn = Achievements.instance.allSecrets;
+            achievementToggles[5].isOn = Achievements.instance.enemyKills5;
+            achievementToggles[6].isOn = Achievements.instance.enemyKills10;
+            achievementToggles[7].isOn = Achievements.instance.enemyKills15;
+            achievementToggles[8].isOn = Achievements.instance.redDeGijzelaars;
+            achievementToggles[9].isOn = Achievements.instance.vindAlleGuns;
         }
     }
 }

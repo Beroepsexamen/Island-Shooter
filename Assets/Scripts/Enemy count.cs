@@ -23,13 +23,13 @@ public class Enemycount : MonoBehaviour
         switch (enemiesKilled)
         {
             case 5:
-                Achievements.Instance.UnlockAchievement("EnemyKills5");
+                Achievements.instance.UnlockAchievement("EnemyKills5");
                 break;
             case 10:
-                Achievements.Instance.UnlockAchievement("EnemyKills10");
+                Achievements.instance.UnlockAchievement("EnemyKills10");
                 break;
             case 15:
-                Achievements.Instance.UnlockAchievement("EnemyKills15");
+                Achievements.instance.UnlockAchievement("EnemyKills15");
                 break;
         }
     }

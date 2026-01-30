@@ -19,9 +19,9 @@ public class SecretPickup : MonoBehaviour
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E))
         {
-            if (Achievements.Instance != null)
+            if (Achievements.instance != null)
             {
-                Achievements.Instance.UnlockAchievement(achievementName);
+                Achievements.instance.UnlockAchievement(achievementName);
                 pickupTextUI.SetActive(false);
                 Destroy(gameObject);
             }

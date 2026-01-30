@@ -3,26 +3,26 @@ using UnityEngine;
 
 public class Achievements : MonoBehaviour
 {
-    public static Achievements Instance;
+    public static Achievements instance;
 
-    public bool Secret1;
-    public bool Secret2;
-    public bool Secret3;
-    public bool Secret4;
-    public bool AllSecrets;
-    public bool EnemyKills5;
-    public bool EnemyKills10;
-    public bool EnemyKills15;
-    public bool RedDeGijzelaars;
-    public bool VindAlleGuns;
+    public bool secret1;
+    public bool secret2;
+    public bool secret3;
+    public bool secret4;
+    public bool allSecrets;
+    public bool enemyKills5;
+    public bool enemyKills10;
+    public bool enemyKills15;
+    public bool redDeGijzelaars;
+    public bool vindAlleGuns;
 
     public Achievementpopup popup;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -35,59 +35,59 @@ public class Achievements : MonoBehaviour
     {
         switch (achievementName)
         {
-            case "Secret1":
-                TryUnlock(ref Secret1, "Secret 1");
+            case "secret1":
+                TryUnlock(ref secret1, "Secret 1");
                 CheckAllSecrets();
                 break;
 
-            case "Secret2":
-                TryUnlock(ref Secret2, "Secret 2");
+            case "secret2":
+                TryUnlock(ref secret2, "Secret 2");
                 CheckAllSecrets();
                 break;
 
-            case "Secret3":
-                TryUnlock(ref Secret3, "Secret 3");
+            case "secret3":
+                TryUnlock(ref secret3, "Secret 3");
                 CheckAllSecrets();
                 break;
 
-            case "Secret4":
-                TryUnlock(ref Secret4, "Secret 4");
+            case "secret4":
+                TryUnlock(ref secret4, "Secret 4");
                 CheckAllSecrets();
                 break;
 
-            case "AllSecrets":
-                TryUnlock(ref AllSecrets, "All Secrets");
+            case "allSecrets":
+                TryUnlock(ref allSecrets, "All Secrets");
                 break;
 
-            case "EnemyKills5":
-                TryUnlock(ref EnemyKills5, "EnemyKills5");
+            case "enemyKills5":
+                TryUnlock(ref enemyKills5, "Enemy Kills 5");
                 break;
 
-            case "EnemyKills10":
-                TryUnlock(ref EnemyKills10, "EnemmyKills10");
+            case "enemyKills10":
+                TryUnlock(ref enemyKills10, "Enemy Kills 10");
                 break;
 
-            case "EnemyKills15":
-                TryUnlock(ref EnemyKills15, "EnemyKills15");
+            case "enemyKills15":
+                TryUnlock(ref enemyKills15, "Enemy Kills 15");
                 break;
 
-            case "RedDeGijzelaars":
-                TryUnlock(ref RedDeGijzelaars, "RedDeGijzelaars");
+            case "redDeGijzelaars":
+                TryUnlock(ref redDeGijzelaars, "Red De Gijzelaars");
                 break;
 
-            case "VindAlleGuns":
-                TryUnlock(ref VindAlleGuns, "VindAlleGuns");
+            case "vindAlleGuns":
+                TryUnlock(ref vindAlleGuns, "Vind Alle Guns");
                 break;
         }
     }
 
     void CheckAllSecrets()
     {
-        if (AllSecrets) return;
+        if (allSecrets) return;
 
-        if (Secret1 && Secret2 && Secret3 && Secret4)
+        if (secret1 && secret2 && secret3 && secret4)
         {
-            TryUnlock(ref AllSecrets, "All Secrets");
+            TryUnlock(ref allSecrets, "All Secrets");
         }
     }
 
