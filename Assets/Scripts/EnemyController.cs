@@ -32,8 +32,8 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        xVelHash = Animator.StringToHash("XVelocity");
-        yVelHash = Animator.StringToHash("YVelocity");
+        xVelHash = Animator.StringToHash("xVelocity");
+        yVelHash = Animator.StringToHash("yVelocity");
     }
 
     // Update is called once per frame
@@ -51,13 +51,13 @@ public class EnemyController : MonoBehaviour
         // Makes the enemy crouch when close to the player
         if (distance <= agent.stoppingDistance)
         {
-            animator.SetBool("IsCrouched", true);
+            animator.SetBool("isCrouched", true);
             FaceTarget();
             Shooting();
         }
         else
         {
-            animator.SetBool("IsCrouched", false);
+            animator.SetBool("isCrouched", false);
         }
 
         // Determine local velocity
@@ -148,7 +148,7 @@ public class EnemyController : MonoBehaviour
         isDead = true;
         Enemycount.instance.EnemyKilled();
         agent.isStopped = true;
-        animator.SetBool("IsDead", true);
+        animator.SetBool("isDead", true);
         yield return new WaitForSeconds(2f);
         GetComponent<CapsuleCollider>().enabled = false;
 

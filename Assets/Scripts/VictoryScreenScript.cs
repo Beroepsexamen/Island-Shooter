@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class VictoryScreenScript : MonoBehaviour
@@ -24,5 +25,15 @@ public class VictoryScreenScript : MonoBehaviour
             achievementToggles[8].isOn = Achievements.instance.redDeGijzelaars;
             achievementToggles[9].isOn = Achievements.instance.vindAlleGuns;
         }
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Start scene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -31,10 +31,18 @@ public class HostageController : MonoBehaviour
 
         if (distance <= lookRadius) followingPlayer = true;
 
+        if (!followingPlayer)
+        {
+            agent.ResetPath();
+            animator.SetBool("isCrouched", true);
+        }
+
         if (followingPlayer) // Follow player when within look radius
         {
             if (distance <= followRadius) agent.SetDestination(target.position);
-            if (distance > followRadius) agent.ResetPath();
+
+            if (distance > followRadius) followingPlayer = false;
+
             if (distance <= agent.stoppingDistance) FaceTarget();
         }
 
