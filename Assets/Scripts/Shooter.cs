@@ -124,8 +124,7 @@ public class Shooter : MonoBehaviour
         if (!Physics.Raycast(
             fpsCam.transform.position,
             fpsCam.transform.forward,
-            out hit,
-            currentGunData.range))
+            out hit))
         {
             return;
         }
