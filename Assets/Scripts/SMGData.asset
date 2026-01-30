@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79e5837e6d21834ebfd4c6d1837f690, type: 3}
   m_Name: SMGData
   m_EditorClassIdentifier: Assembly-CSharp::ShooterData
-  range: 10
+  range: 15
   damage: 10
   ShootDelay: 0.1
   reloadTime: 5
