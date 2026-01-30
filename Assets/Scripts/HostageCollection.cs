@@ -30,16 +30,17 @@ public class HostageCollection : MonoBehaviour
         }
     } 
 
+    // When a hostage enters the trigger, start the collection process
     void OnTriggerEnter(Collider other)
     {
-        // When a hostage enters the trigger, start the collection process
         if (other.CompareTag("Hostage"))
         {
             StartCoroutine(CollectHostage(other.transform));
         }
     }
-
-    private IEnumerator CollectHostage(Transform hostage) // Collects the hostage to set location
+    
+    // Collects the hostage to set location
+    private IEnumerator CollectHostage(Transform hostage)
     {
         NavMeshAgent agent = hostage.GetComponent<NavMeshAgent>();
         Animator animator = hostage.GetComponent<Animator>();

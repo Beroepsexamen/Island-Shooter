@@ -31,7 +31,7 @@ public class HostageController : MonoBehaviour
 
         if (distance <= lookRadius) followingPlayer = true;
 
-        if (!followingPlayer)
+        if (!followingPlayer) // Crouch when not following player
         {
             agent.ResetPath();
             animator.SetBool("isCrouched", true);

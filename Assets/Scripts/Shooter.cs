@@ -20,6 +20,7 @@ public class Shooter : MonoBehaviour
     private Ammo ammo;
     public AmmoUI ammoUI;
 
+    // Give the player a starting gun
     private void Start()
     {
         ammo = GetComponent<Ammo>();
@@ -28,6 +29,7 @@ public class Shooter : MonoBehaviour
             EquipGun(0);
     }
 
+    // Switch gun based on player input
     private void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0))
@@ -45,6 +47,7 @@ public class Shooter : MonoBehaviour
         if (unlockedGuns.Count >= 4) Achievements.instance.UnlockAchievement("VindAlleGuns");
     }
 
+    // Add a new gun if it's not already unlocked
     public void AddGun(ShooterData newGun)
     {
         if (!unlockedGuns.Contains(newGun))
@@ -54,6 +57,7 @@ public class Shooter : MonoBehaviour
         }
     }
 
+    // Equip a gun from the unlocked guns list
     void EquipGun(int index)
     {
         if (index < 0 || index >= unlockedGuns.Count)
@@ -83,6 +87,7 @@ public class Shooter : MonoBehaviour
             weaponUI.UpdateIcon(currentGunData.weaponIcon);
     }
 
+    // Update the ammo UI to reflect current ammo counts
    public void UpdateAmmoUI()
     {
         if (ammo == null || ammoUI == null || currentGunData == null) return;
@@ -93,6 +98,7 @@ public class Shooter : MonoBehaviour
         );
     }
 
+    // Reload the current gun
     void Reload()
     {
         if (currentGunData == null) return;
@@ -101,6 +107,7 @@ public class Shooter : MonoBehaviour
         UpdateAmmoUI();
     }
 
+   // Shoot the current gun with raycasting and play a sound effect
    public void Shooting()
     {
         if (currentGunData == null || currentFirePoint == null)

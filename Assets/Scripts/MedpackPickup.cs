@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MedpackPickup : MonoBehaviour
 {
-    public int healAmount = 1;           // Hoeveel health deze medpack geeft
-    public GameObject pickupTextUI;      // UI Text object dat "Press E" toont
+    public int healAmount = 1;           // How much health this medpack gives
+    public GameObject pickupTextUI;      // UI Text object that shows "Press E"
 
     private bool canPickup = false;
     private PlayerHealth health;
@@ -11,9 +11,10 @@ public class MedpackPickup : MonoBehaviour
     private void Start()
     {
         if (pickupTextUI != null)
-            pickupTextUI.SetActive(false); // start onzichtbaar
+            pickupTextUI.SetActive(false); // Start invisible
     }
 
+    // If the player picks up the medpack by pressing E, heal the player
     private void Update()
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E))
@@ -33,10 +34,10 @@ public class MedpackPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check of de collider van de speler is
+        // Check if the player entered the trigger
         if (other.CompareTag("Player"))
         {
-            // Pak PlayerHealth van GameManager
+            // Get PlayerHealth from GameManager
             health = PlayerHealth.instance;
             if (health != null)
             {
@@ -51,6 +52,7 @@ public class MedpackPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // Hide pickup text when player leaves range
             canPickup = false;
             health = null;
             if (pickupTextUI != null)

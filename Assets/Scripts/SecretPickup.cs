@@ -15,6 +15,7 @@ public class SecretPickup : MonoBehaviour
             pickupTextUI.SetActive(false);
     }
 
+    // If the player collects the secret pickup by pressing E, unlock the achievement
     private void Update()
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E))
@@ -28,6 +29,7 @@ public class SecretPickup : MonoBehaviour
         }
     }
 
+    // Show pickup text when player is in range
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -41,6 +43,7 @@ public class SecretPickup : MonoBehaviour
         }
     }
 
+    // Hide pickup text when player leaves range
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

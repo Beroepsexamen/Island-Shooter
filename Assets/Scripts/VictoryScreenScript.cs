@@ -7,12 +7,13 @@ public class VictoryScreenScript : MonoBehaviour
 {
     [SerializeField] private List<Toggle> achievementToggles;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Unlock and show the cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        // Set all achievement toggles based on unlocked achievements
         if (Achievements.instance != null)
         {
             Achievements.instance.UnlockAchievement("RedDeGijzelaars");
