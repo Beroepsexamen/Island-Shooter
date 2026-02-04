@@ -13,6 +13,7 @@ public class Shooter : MonoBehaviour
     private GameObject currentGun;
     private Transform currentFirePoint;
     private AudioSource gunAudio;
+    private AudioSource reloadAudio;
     
 
     private float nextFireTime;
@@ -23,6 +24,7 @@ public class Shooter : MonoBehaviour
     // Give the player a starting gun
     private void Start()
     {
+        reloadAudio = GetComponent<AudioSource>();
         ammo = GetComponent<Ammo>();
 
         if (unlockedGuns.Count > 0)
@@ -102,6 +104,8 @@ public class Shooter : MonoBehaviour
     void Reload()
     {
         if (currentGunData == null) return;
+
+        reloadAudio.Play();
 
         ammo.Reload(currentGunData);
         UpdateAmmoUI();
