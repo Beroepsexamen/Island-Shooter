@@ -33,7 +33,7 @@ public class VictoryScreenScript : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("Start scene");
+        SceneManager.LoadScene("Start screen");
     }
 
     public void QuitGame()
