@@ -11,6 +11,8 @@ public class HostageCollection : MonoBehaviour
     private int hostageCount;
     private int hostagesCollected;
 
+    private bool hostagesAtCollectionPoint = false;
+
     private void Start()
     {
         hostageCount = hostageParent.transform.childCount;
@@ -19,7 +21,7 @@ public class HostageCollection : MonoBehaviour
 
     private void Update()
     {
-        if (hostagesCollected >= hostageCount)
+        if (hostagesCollected >= hostageCount && hostagesAtCollectionPoint)
         {
             SceneManager.LoadScene("Victory");
         }
@@ -53,6 +55,7 @@ public class HostageCollection : MonoBehaviour
 
         yield return new WaitUntil(() => agent.velocity.magnitude <= 0.1f);
 
+        hostagesAtCollectionPoint = true;
         agent.isStopped = true;
 
         animator.SetFloat("xVelocity", 0);

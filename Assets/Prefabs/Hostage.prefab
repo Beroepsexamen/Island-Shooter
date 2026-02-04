@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 7261856583414720064}
   m_Layer: 0
   m_Name: Hostage
-  m_TagString: Untagged
+  m_TagString: Hostage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
